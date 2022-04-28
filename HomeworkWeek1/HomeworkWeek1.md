@@ -1,6 +1,7 @@
 # Homework Week 1
 
-## Team Name: 
+## Team Name: Have you tried restarting?
+## Web Application Name: PackedIt
 
 ## Team members:
 - Eilidh Quinn
@@ -8,11 +9,6 @@
 - Laura Almond
 - Michelle Kim
 
-## Web Application Name:
-- Packd
-- PackedIt - have you Packedit yet?
-- Packr
-- PackItIn
 
 
 ## Responses to Questions 1 & 2
@@ -60,7 +56,7 @@ We have created some sample architecture diagrams of the version of our web appl
 
 ![Website Flow](./Images/Website%20Flow.png)
 
-These are some sample wireframes of our web application, including for both our MVP and MVP plus extensions versions of the site. Please note these only contain sample and placeholder colours, fonts, text and images, they are just to show an example of how the layout of the web application might look. 
+These are some simple prototypes/wireframes of our web application, including for both our MVP and MVP plus extensions versions of the site. Please note these only contain sample and placeholder colours, fonts, text and images, they are just to show an example of how the layout and structure of the web application might look. 
 
 ### Homepage
 ![HomePage](./Images/Homepage.png)
@@ -68,7 +64,10 @@ These are some sample wireframes of our web application, including for both our 
 ### About Page
 ![AboutPage](./Images/About.png)
 
-### Create your list Page
+### Create your list page starting screen
+![CreatePageStart](./Images/Create%20your%20list%20-%20first%20page.png)
+
+### Create your list page populated
 ![CreatePage](./Images/Create%20your%20list.png)
 
 ### Contact Page
@@ -83,7 +82,7 @@ We also have pulled together what some of the pages might look like in the web a
 ![LoginPage](./Images/MVP%20%2B%20Extensions%20Login%20Page.png)
 
 ### Create your list page with extensions
-![CreatePage](./Images/Create%20your%20list%20MVP%20%2Bextensions.png)
+![CreatePage](./Images/Create%20your%20list%20plus%20extensions.png)
 
 ### e. Describe the team approach to the project work: 
 **How are you planning to distribute the workload**
