@@ -126,7 +126,7 @@ For example like how most back buttons are usually located on the top-left of th
 ## Nielsen Design Principles/Heuristics
 
 |  Design Principle                                    | Logo | Font | Icons | Layout |  Text  |
-|:---:|:---:|:---:|:---:|:---:|:---:|
+|---|:---:|:---:|:---:|:---:|:---:|
 | Visibility of system status                          |      |      |       |    x   |   x    |
 | Match between the system and the real world          |      |      |   x   |        |   x    |
 | User control and freedom                             |      |      |       |    x   |   x    |
