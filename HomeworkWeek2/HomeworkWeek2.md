@@ -75,9 +75,18 @@ We have chosen Raleway as our heading font and Nunito as our body font. We will 
 
 
 ## f) Design heuristics
-Design principle in bold (numbered).  Description in italics.  We can remove the stuff in italics once we have finished this section. 
 
-### Normal Design Principles/Heuristics
+## Norman Design Principles/Heuristics
+|  Design Principle                                    | Logo | Font | Icons | Layout  |  Text  |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Use both the knowledge in the world and in the head  |  x   |      |   x   |    x    |        |
+| Simplify the structure of the task                   |      |      |   x   |    x    |    x   |
+| Make things visible                                  |      |      |   x   |         |        |
+| Get the mappings right                               |      |      |   x   |    x   |    x   |
+| Exploit the power of constraints, both natural and artificial |      |       |   x   |        |   |
+| Design for error                                     |      |      |       |    x    |   x    |
+| When all else fails, standardise                     |      |      |   x   |    x    |        |
+
 
 #### 1. **Use both the knowledge in the world and in the head:** 
 *Make use of what the user already knows to reduce their mental load!
@@ -114,7 +123,20 @@ For example like how most back buttons are usually located on the top-left of th
 
 
 
-### Nielsen Design Principles/Heuristics
+## Nielsen Design Principles/Heuristics
+
+|  Design Principle                                    | Logo | Font | Icons | Layout |  Text  |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Visibility of system status                          |      |      |       |    x   |   x    |
+| Match between the system and the real world          |      |      |   x   |        |   x    |
+| User control and freedom                             |      |      |       |    x   |   x    |
+| Consistency and standards                            |      |      |   x   |    x   |        |
+| Error prevention                                     |      |      |       |    x   |   x    |
+| Recognition rather than recall                       |      |      |   x   |    x   |   x    |
+| Flexibility and efficiency of use                    |      |      |   x   |    x   |   x    |
+| Aesthetic and minimalist design                      |  x   |   x  |   x   |    x   |        |
+| Help users recognise, diagnose and recover from errors|     |      |       |        |   x    |
+| Help and documentation                               |      |      |   x   |        |   x    |
 
 #### 1. **Visibility of system status:** 
 *Users should be aware of what’s going on at all times to prevent them feeling lost.*
@@ -143,7 +165,8 @@ For example like how most back buttons are usually located on the top-left of th
 *Experienced users should have the ability to speed up interaction (e.g. ‘Skip’ button!).*
 - When creating a list a user can pre-select a number of suggested categoreis.  This will set up the categories within the list, saving the user time and effort (as they do not need to use them manually).
 
-#### 8. **Aesthetic and minimalist design:** *All pieces of information compete for the users attention. Minimise pieces shown to prevent information overloads or clashes.*
+#### 8. **Aesthetic and minimalist design:** 
+*All pieces of information compete for the users attention. Minimise pieces shown to prevent information overloads or clashes.*
 - We have limited our use of colours to three.  We will also use seperate colours for tappable/clickable and non tappable/non clickable elements.
 - Our buttons are rounded as rounded buttons take less cognitive effort to visually process than square buttons.  They are effective as the 'point inward' towards the centre.
 - We are using a simple sans-serif font: Raleway for headings and Nunito for text.
