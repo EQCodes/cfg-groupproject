@@ -10,7 +10,30 @@
 - Michelle Kim
 
 ## Wireframe of PackedIt
-Wireframes to be added here. 
+### **Landing Page - Home, About & Contact**
+This is the landing page for PackedIt. The arrows indicate that when you click on 'About' or 'Contact' in the Nav Bar, the page scrolls down to the relevent section of the page. When clicked, they would change to bold and teal text as is currently shown with 'Home' 'Your List' is currently not clickable as the user hasn't yet created a list.
+
+![Landing Page Full Scroll](./Hw2Images/Frame%20Landing%20Page%20Full%20Scroll.png)
+
+### **A closer look at Create your list frame**
+**Selecting your trip date**
+![Create your list focus 1](./Hw2Images/Frame%20Create%20Your%20List%20Focus%201.png)
+Clicking on the date box above will open up a calendar as below, where you can select the start and end date of your trip. 
+
+![Create your list focus 2](./Hw2Images/Frame%20Landing%20Create%20Your%20List%20Focus%202.png)
+**Selecting categories to add to your list**
+![Create your list focus 3](./Hw2Images/Frame%20Landing%20Create%20Your%20List%20Focus%203.png)
+
+Clicking on the radio button like in the frame above, will add this category to your list. 
+
+![Create your list focus 4](./Hw2Images/Frame%20Create%20Your%20List%20Focus%204.png)
+When you click 'create your list' as above, this will take you through to the Your List page, below.
+
+### **Your List Page**
+![Your List Page](./Hw2Images/Frame%20Your%20List%20Page.png)
+This is the Your List page where users can add/create, view, update/edit and delete/remove list items and list categories. 
+The list name, destination and dates are populated from the Create Your List form on the landing page, as well as any categories that were selected. 
+
 
 ## Design Justifications
 
