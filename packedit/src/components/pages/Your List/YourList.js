@@ -2,7 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddItem from './AddItem';
-//import categoryarray from './AddItem';
+import Item from "./ListBody/Item";
+import ListItems from "./ListBody/ListBody"
+import "../../../../src/styles/YourList.css"
 
 
 
@@ -24,12 +26,16 @@ const YourList = ({ categoryarray } ) => {
         <Link to="/">Home</Link> | <Link to="/your-list">Your List</Link>
       </nav>
       <AddItem 
-      inputValue={inputValue}
-      setInputValue={setInputValue}
-      items={items}
-      setItems={setItems}
-      itemCategory={itemCategory}
-      setItemCategory={setItemCategory}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        items={items}
+        setItems={setItems}
+        itemCategory={itemCategory}
+        setItemCategory={setItemCategory}
+      />
+      <ListItems
+        items={items}
+        setItems={setItems}
       />
     </div>
   );

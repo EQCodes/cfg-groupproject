@@ -1,13 +1,9 @@
 import React from "react";
-import DropdownList from "react-widgets/DropdownList";
 
-
-var categories = [
-    {value: 'category1', text: 'category1'},
-    {value: 'category2', text: 'category2'},
-    {value: 'category3', text: 'category3'},
-    {value: 'category4', text: 'category4'}
-];
+var categoriesDict = {
+    category1: "clothes",
+    category2: "electrics",
+};
 
 // this component is for users to add an item to one of their categories
 const AddItem = ({ inputValue, setInputValue, items, setItems, itemCategory, setItemCategory }) => {
@@ -53,9 +49,11 @@ const AddItem = ({ inputValue, setInputValue, items, setItems, itemCategory, set
                     onChange={itemCategoryHandler} 
                     name="category" 
                     >
-                        {categories.map(item => {
-                        return (<option key={item.value} value={item.value}>{item.text}</option>);
-                    })}               
+                    {
+                        Object.entries(categoriesDict)
+                        .map( ([key, value]) => <option key={key}>{value}</option> )
+                    }
+                    );              
                     </select>
                 </div>
             </form>
