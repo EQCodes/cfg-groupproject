@@ -1,0 +1,13 @@
+@import "typeface-nunito";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "typeface-nunito", "Nunito",
+    "Raleway", "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  text-align: center;
+}
+
