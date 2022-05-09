@@ -8,6 +8,7 @@ import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import "./styles/styles.css";
 import bootstrap from "bootstrap";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

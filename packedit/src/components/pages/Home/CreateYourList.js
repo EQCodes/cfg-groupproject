@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function CreateYourList(props) {
     return (
@@ -20,6 +20,12 @@ function CreateYourList(props) {
                         <Form.Group>
                             <Form.Label>Destination</Form.Label>
                             <Form.Control type="text" placeholder="Maldives" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group controlId="dob">
+                            <Form.Label>Select Date</Form.Label>
+                            <Form.Control type="date" name="dob" placeholder="Date of Birth" />
                         </Form.Group>
                     </Col>
                 </Row>
