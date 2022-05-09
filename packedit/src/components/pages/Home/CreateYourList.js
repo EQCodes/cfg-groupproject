@@ -25,7 +25,7 @@ function CreateYourList(props) {
                     <Col>
                         <Form.Group controlId="dob">
                             <Form.Label>Select Date</Form.Label>
-                            <Form.Control type="date" name="dob" placeholder="Date of Birth" />
+                            <Form.Control type="date" name="trip-date" placeholder="Trip Date" />
                         </Form.Group>
                     </Col>
                 </Row>
