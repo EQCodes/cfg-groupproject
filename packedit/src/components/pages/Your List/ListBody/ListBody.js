@@ -3,8 +3,8 @@ import Item from "./Item";
 //import CategoriesDict2 from "../Categories";
 
 var categoriesDictThree = {
-    category1: "clothes",
-    category2: "electrics",
+    category1: "clothes3",
+    category2: "electrics3",
 };
 
 function ListItems ( { items, setItems }) {
@@ -33,7 +33,7 @@ function ListItems ( { items, setItems }) {
            */}
 
            <div>
-                {items.filter(item => item.category == "electrics").map(filteredItem => (
+                {items.filter(item => item.category == "electrics3").map(filteredItem => (
                     <li>
                     {filteredItem.item}
                     </li>
