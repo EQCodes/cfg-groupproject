@@ -1,0 +1,6 @@
+.ul li {
+  list-style: none;
+  float: right;
+  padding: 0px 20px 25px;
+  background-color: white;
+}

@@ -5,6 +5,7 @@ import Home from "./components/pages/Home/Home";
 import NotFound from "./components/pages/NotFound/NotFound";
 import YourList from "./components/pages/Your List/YourList";
 import "./styles/styles.css";
+import bootstrap from "bootstrap";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
