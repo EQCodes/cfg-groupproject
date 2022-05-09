@@ -6,8 +6,12 @@ function NavBar() {
   return (
     <div>
       <ul class="ul">
-        <li class="li-contact">Contact</li>
-        <li class="li">About</li>
+        <li class="li">
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li class="li">
+          <Link to="/about">About</Link>
+        </li>
         <li class="li">
           <Link to="/your-list">Your List</Link>
         </li>

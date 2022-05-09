@@ -1,9 +1,13 @@
 import React from "react";
-import "../../../styles/Home.css";
+import "../../styles/Home.css";
+import NavBar from '../NavBar';
 
 const About = () => {
   return (
     <div>
+      <nav>
+        <NavBar />
+      </nav>
       <div class="about-head-text">
         <h2>Hi!</h2>
       </div>
