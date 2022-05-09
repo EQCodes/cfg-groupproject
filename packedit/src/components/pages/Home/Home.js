@@ -5,7 +5,8 @@ import "../../../styles/styles.css";
 import "../../../styles/Home.css";
 import NavBar from "../../NavBar";
 import "../../../styles/Card.css";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import CreateYourList from "./CreateYourList";
 
 const Home = () => {
   return (
@@ -18,7 +19,9 @@ const Home = () => {
       <div class="home-bg">
         <div class="outer-card">
           <h1 class="start-text">Let's get packing!</h1>
-          <Card class="card">Insert 'Create your list' function</Card>
+          <Card className="card">
+            <CreateYourList/>
+          </Card>
         </div>
       </div>
     </div>
