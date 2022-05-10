@@ -7,7 +7,7 @@ import Item from "./ListBody/Item";
 import ListItems from "./ListBody/ListBody"
 import "../../../../src/styles/YourList.css"
 
-const YourList = ({ categoryarray } ) => {
+const YourList = ({ categoryarray }) => {
   // Setting states
   //This captures the user input
   const [inputValue, setInputValue] = useState("");
@@ -18,22 +18,26 @@ const YourList = ({ categoryarray } ) => {
   //const [itemCategory, setItemCategory] = useState([categoryarray[1]]);
 
   return (
-    <div className="app">
-      <nav>
-        <NavBar/>
-      </nav>
-      <AddItem 
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        items={items}
-        setItems={setItems}
-        itemCategory={itemCategory}
-        setItemCategory={setItemCategory}
-      />
-      <ListItems
-        items={items}
-        setItems={setItems}
-      />
+    <div>
+      <div>
+        <nav>
+          <NavBar />
+        </nav>
+      </div>
+      <div>
+        <AddItem
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          items={items}
+          setItems={setItems}
+          itemCategory={itemCategory}
+          setItemCategory={setItemCategory}
+        />
+        <ListItems
+          items={items}
+          setItems={setItems}
+        />
+      </div>
     </div>
   );
 };
