@@ -5,7 +5,7 @@ import "../../../styles/styles.css";
 import "../../../styles/Home.css";
 import NavBar from "../../NavBar";
 import "../../../styles/Card.css";
-import { Card, Button } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
 import CreateYourList from "./CreateYourList";
 
 const Home = () => {

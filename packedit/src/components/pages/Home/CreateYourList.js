@@ -11,26 +11,26 @@ function CreateYourList(props) {
             <Form>
                 <Row>
                     <Col>
-                        <Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Label>List Name</Form.Label>
                             <Form.Control type="text" placeholder="Summer Holiday" />
                         </Form.Group>
                     </Col>
                     <Col>
-                        <Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Label>Destination</Form.Label>
                             <Form.Control type="text" placeholder="Maldives" />
                         </Form.Group>
                     </Col>
                     <Col>
-                        <Form.Group controlId="dob">
+                        <Form.Group className="mb-3" controlId="dob">
                             <Form.Label>Select Date</Form.Label>
                             <Form.Control type="date" name="trip-date" placeholder="Trip Date" />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row>
-                    <Form.Group controlId="formBasicCheckbox">
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label>List Categories</Form.Label>
                         <Form.Check inline type="checkbox" label="Clothes" />
                         <Form.Check inline type="checkbox" label="Documents" />

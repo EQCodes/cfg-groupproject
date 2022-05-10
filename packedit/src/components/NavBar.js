@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import logoPath from '../styles/Images/Logos/Green-graphic-only.png'
 
+// **Non Bootstrap NavBar**
 // function NavBar() {
 //   return (
 //     <div>
@@ -27,7 +28,7 @@ import logoPath from '../styles/Images/Logos/Green-graphic-only.png'
 //   );
 // }
 
-
+//Bootstrap NavBar
 function NavBar() {
   return(
     <Navbar bg="light" expand="lg" fixed="top">
