@@ -19,9 +19,9 @@ const Home = () => {
       <div className="home-bg">
         <div className="outer-card">
           <h1 className="start-text">Let's get packing!</h1>
-          <Card className="card">
+          {/* <Card className="card"> */}
             <CreateYourList/>
-          </Card>
+          {/* </Card> */}
         </div>
       </div>
     </div>

@@ -30,32 +30,40 @@ import logoPath from '../styles/Images/Logos/Green-graphic-only.png'
 
 //Bootstrap NavBar
 function NavBar() {
-  return(
-    <Navbar bg="light" expand="lg" fixed="top">
-    <Container>
-      <Navbar.Brand href="/">
-        <img
-          src={logoPath}
-          width="50"
-          height="50"
-          className="d-inline-block align-top"
-          alt="PackedIt Logo"
-        />
-      </Navbar.Brand>
-    </Container>
-    <Container>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-        <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/your-list">Your List</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/contact">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar> 
+  return (
+    <div class="position-absolute top-0">
+      <Navbar bg="light" expand="lg" fixed="top">
+        <div>
+          <Container>
+            <Navbar.Brand href="/">
+              <img
+                src={logoPath}
+                width="50"
+                height="50"
+                className="d-inline-block align-top"
+                alt="PackedIt Logo"
+              />
+            </Navbar.Brand>
+          </Container>
+        </div>
+        <div class="position-absolute end-0">
+          <Container>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/your-list">Your List</Nav.Link>
+                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Link href="/contact">Contact</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </div>
+      </Navbar>
+    </div>
   )
 }
 
 export default NavBar;
+
+// <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="navigationID">
