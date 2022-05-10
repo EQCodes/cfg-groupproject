@@ -7,10 +7,30 @@ import Card from "react-bootstrap/Card";
 import "../../../styles/CreateYourList.css";
 
 function CreateYourList(props) {
+  //submit handler for when the user presses the submit button
+  function submitHandler(e) {
+    //to prevent the page from reloading/refreshing
+    //this is bad because it resets the state, if we have any
+    e.preventDefault();
+
+    const list = {
+      listName: e.target[0].value,
+      listDestination: e.target[1].value,
+      departureDate: e.target[2].value,
+      clothesCategory: e.target[3].checked,
+      documentsCategory: e.target[4].checked,
+      electronicsCategory: e.target[5].checked,
+      toiletriesCategory: e.target[6].checked,
+      covidCategory: e.target[7].checked,
+    };
+    //add to firebase later :) kthxbye
+    console.log(list);
+  }
+
   return (
     <div>
       <Card className="card">
-        <Form>
+        <Form onSubmit={submitHandler}>
           <Row>
             <Col>
               <Form.Group className="title-text mb-3">
