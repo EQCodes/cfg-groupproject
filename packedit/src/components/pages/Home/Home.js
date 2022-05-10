@@ -16,9 +16,9 @@ const Home = () => {
           <NavBar />
         </nav>
       </div>
-      <div class="home-bg">
-        <div class="outer-card">
-          <h1 class="start-text">Let's get packing!</h1>
+      <div className="home-bg">
+        <div className="outer-card">
+          <h1 className="start-text">Let's get packing!</h1>
           <Card className="card">
             <CreateYourList/>
           </Card>

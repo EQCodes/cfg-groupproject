@@ -8,10 +8,10 @@ const About = () => {
       <nav>
         <NavBar />
       </nav>
-      <div class="about-head-text">
+      <div className="about-head-text">
         <h2>Hi!</h2>
       </div>
-      <div class="about-body-text">
+      <div className="about-body-text">
         <body>
           <p>We are Grace, Laura, Michelle & Eilidh.</p>
           <p>

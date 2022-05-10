@@ -8,11 +8,11 @@ const Contact = () => {
       <nav>
         <NavBar />
       </nav>
-      <div class="contact-bg">
-        <div class="contact-header-text">
+      <div className="contact-bg">
+        <div className="contact-header-text">
           <h2>Get in touch.</h2>
         </div>
-        <div class="contact-body-text">
+        <div className="contact-body-text">
           <body>
             <p>
               If you have any questions about the project or would just like to

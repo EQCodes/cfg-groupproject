@@ -42,8 +42,10 @@ function NavBar() {
           alt="PackedIt Logo"
         />
       </Navbar.Brand>
+    </Container>
+    <Container>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/your-list">Your List</Nav.Link>

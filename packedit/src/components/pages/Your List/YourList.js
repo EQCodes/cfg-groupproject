@@ -5,7 +5,7 @@ import NavBar from '../../NavBar';
 
 const YourList = () => {
   return (
-    <div class="app">
+    <div className="app">
       <nav>
         <NavBar/>
       </nav>
