@@ -1,0 +1,67 @@
+.home-bg {
+  background: url(../styles/Images/Photos/mohamed-masaau-nfF5-G6cFwY-unsplash.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start-text {
+  padding-top: 10%;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  font-size:70px;
+  line-height: 70px;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about-head-text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 7px;
+  padding: 15% 0% 0% 10%;
+  color: #515151;
+}
+
+.about-body-text {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 0% 60% 19% 10%;
+  color: #515151;
+}
+
+.contact-bg {
+  background: url(../styles/Images/Photos/philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-header-text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 7px;
+  padding: 20% 0% 0% 7%;
+  color: white;
+}
+
+.contact-body-text {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 0% 60% 20% 7%;
+  color: white;
+}

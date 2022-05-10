@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const NotFound = () => {
   return (
-    <div class="app">
+    <div className="app">
       <h1>Page not found!</h1>
     </div>
   );

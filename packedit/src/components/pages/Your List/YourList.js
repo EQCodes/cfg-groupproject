@@ -1,13 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NavBar from '../../NavBar';
 import AddItem from './AddItem';
 import Item from "./ListBody/Item";
 import ListItems from "./ListBody/ListBody"
 import "../../../../src/styles/YourList.css"
-
-
-
 
 const YourList = ({ categoryarray } ) => {
   // Setting states
@@ -20,10 +18,9 @@ const YourList = ({ categoryarray } ) => {
   //const [itemCategory, setItemCategory] = useState([categoryarray[1]]);
 
   return (
-    <div class="app">
-      <p>List</p>
+    <div className="app">
       <nav>
-        <Link to="/">Home</Link> | <Link to="/your-list">Your List</Link>
+        <NavBar/>
       </nav>
       <AddItem 
         inputValue={inputValue}

@@ -4,7 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
 import NotFound from "./components/pages/NotFound/NotFound";
 import YourList from "./components/pages/Your List/YourList";
+import Contact from "./components/pages/Contact";
+import About from "./components/pages/About";
 import "./styles/styles.css";
+// import bootstrap from "bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +19,8 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/your-list" element={<YourList />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
