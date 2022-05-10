@@ -1,0 +1,24 @@
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 70px;
+  height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*need to make card's size dependent on contents and not predetermined*/
+.outer-card {
+  padding: 0% 20% 10% 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-text {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 20px;
+  color: #515151;
+}
