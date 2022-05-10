@@ -1,13 +1,17 @@
 import React from "react";
-import "../../../styles/Home.css";
+import "../../styles/Home.css";
+import NavBar from '../NavBar';
 
 const About = () => {
   return (
     <div>
-      <div class="about-head-text">
+      <nav>
+        <NavBar />
+      </nav>
+      <div className="about-head-text">
         <h2>Hi!</h2>
       </div>
-      <div class="about-body-text">
+      <div className="about-body-text">
         <body>
           <p>We are Grace, Laura, Michelle & Eilidh.</p>
           <p>
