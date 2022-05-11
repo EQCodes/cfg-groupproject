@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles/CreateYourList.css";
+import "../../../styles/CreateYourList.scss";
 
 function Card(props) {
   const classes = "card " + props.className;

@@ -6,10 +6,9 @@ import NotFound from "./components/pages/NotFound/NotFound";
 import YourList from "./components/pages/Your List/YourList";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
-import "./styles/styles.css";
 // import bootstrap from "bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.scss';
 
 
 

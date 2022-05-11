@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import "../../../styles/CreateYourList.css";
+import "../../../styles/CreateYourList.scss";
 
 function CreateYourList(props) {
   //submit handler for when the user presses the submit button

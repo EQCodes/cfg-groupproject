@@ -1,5 +1,6 @@
 import React from "react";
-import "../../styles/Home.css";
+import "../../styles/Home.scss";
+// import "../../styles/styles.scss";
 import NavBar from '../NavBar';
 
 const About = () => {

@@ -5,7 +5,7 @@ import NavBar from "../../NavBar";
 import AddItem from "./AddItem";
 import Item from "./ListBody/Item";
 import ListItems from "./ListBody/ListBody";
-import "../../../../src/styles/YourList.css";
+import "../../../../src/styles/YourList.scss";
 
 const YourList = ({ categoryarray }) => {
   // Setting states
