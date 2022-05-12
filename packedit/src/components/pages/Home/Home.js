@@ -1,11 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../../../styles/styles.css";
-import "../../../styles/Home.css";
+import "../../../styles/styles.scss";
+import "../../../styles/Home.scss";
 import NavBar from "../../NavBar";
-import "../../../styles/Card.css";
-import Card from "react-bootstrap/Card";
 import CreateYourList from "./CreateYourList";
 
 const Home = () => {
@@ -19,9 +17,7 @@ const Home = () => {
       <div className="home-bg">
         <div className="outer-card">
           <h1 className="start-text">Let's get packing!</h1>
-          {/* <Card className="card"> */}
-            <CreateYourList/>
-          {/* </Card> */}
+          <CreateYourList />
         </div>
       </div>
     </div>

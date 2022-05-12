@@ -1,5 +1,6 @@
 import React from "react";
-import "../../styles/Home.css";
+import "../../styles/Home.scss";
+// import "../../styles/styles.scss";
 import NavBar from '../NavBar';
 
 const About = () => {
@@ -12,7 +13,6 @@ const About = () => {
         <h2>Hi!</h2>
       </div>
       <div className="about-body-text">
-        <body>
           <p>We are Grace, Laura, Michelle & Eilidh.</p>
           <p>
             We are aspiring software developers and this website is our final
@@ -23,7 +23,6 @@ const About = () => {
             organised list.
           </p>
           <p>No more forgetting any essentials! So, have you PackedIt yet?</p>
-        </body>
       </div>
     </div>
   );
