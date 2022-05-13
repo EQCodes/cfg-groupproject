@@ -1,10 +1,20 @@
-  .item {
-    margin: 0.5rem;
-    background: white;
-    font-size: 1.5rem;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 1s ease;
-  }
+.item {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.your-list-info-card {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.your-list-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 13px;
+}

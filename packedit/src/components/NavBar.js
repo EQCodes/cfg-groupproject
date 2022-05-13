@@ -38,8 +38,8 @@ function NavBar() {
             <Navbar.Brand href="/">
               <img
                 src={logoPath}
-                width="325"
-                height="120"
+                width="18%"
+                height="20%"
                 className="d-inline-block align-top"
                 alt="PackedIt Logo"
               />

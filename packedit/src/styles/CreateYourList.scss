@@ -7,18 +7,18 @@
   justify-content: center;
 }
 
-/*need to make card's size dependent on contents and not predetermined*/
+/*need to make card's size dependent on contents and not predetermined
 .outer-card {
   padding: 0% 20% 10% 20%;
   align-items: center;
   justify-content: center;
-}
+}*/
 
 .title-text {
   font-family: "Nunito";
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 200%;
   line-height: 20px;
   color: #515151;
 }
@@ -29,5 +29,32 @@
   align-items: left;
   font-size: 20px;
   line-height: 35px;
-  width: 115%;
+  width: 105%;
+}
+
+.categories-text {
+  font-family: "Nunito";
+  font-style: normal;
+  align-items: left;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.create-button {
+  width: 100%;
+  height: 62px;
+  left: 894px;
+  top: 742px;
+  background: #f37d5e;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.create-button-text {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 200%;
+  line-height: 20px;
+  color: white;
 }

@@ -23,7 +23,7 @@ function CreateYourList(props) {
       toiletriesCategory: e.target[6].checked,
       covidCategory: e.target[7].checked,
     };
-    //add to firebase later :) kthxbye
+    //add to firebase later
     console.log(list);
   }
 
@@ -33,8 +33,8 @@ function CreateYourList(props) {
         <Form onSubmit={submitHandler}>
           <Row>
             <Col>
-              <Form.Group className="title-text mb-3">
-                <Form.Label>List Name</Form.Label>
+              <Form.Group className="title-text mb-4">
+                <Form.Label className="mb-3">List Name</Form.Label>
                 <Form.Control
                   className="input"
                   type="text"
@@ -43,8 +43,8 @@ function CreateYourList(props) {
               </Form.Group>
             </Col>
             <Col>
-              <Form.Group className="title-text mb-3">
-                <Form.Label>Destination</Form.Label>
+              <Form.Group className="title-text">
+                <Form.Label className="mb-3">Destination</Form.Label>
                 <Form.Control
                   className="input"
                   type="text"
@@ -53,8 +53,8 @@ function CreateYourList(props) {
               </Form.Group>
             </Col>
             <Col>
-              <Form.Group className="title-text mb-3" controlId="dob">
-                <Form.Label>Select Date</Form.Label>
+              <Form.Group className="title-text" controlId="dob">
+                <Form.Label className="mb-3">Select Date</Form.Label>
                 <Form.Control
                   className="input"
                   type="date"
@@ -66,21 +66,52 @@ function CreateYourList(props) {
           </Row>
           <Row>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Label className="title-text">List Categories</Form.Label>
+              <Form.Label className="title-text my-3">
+                List Categories
+              </Form.Label>
               <br />
-              <Form.Check inline type="checkbox" label="Clothes" />
-              <Form.Check inline type="checkbox" label="Documents" />
-              <Form.Check inline type="checkbox" label="Electronics" />
-              <Form.Check inline type="checkbox" label="Toiletries" />
-              <Form.Check inline type="checkbox" label="COVID-19 Safety" />
-              <Form.Text className="text-muted">
+              <Form.Check
+                className="categories-text"
+                inline
+                type="checkbox"
+                label="Clothes"
+              />
+              <Form.Check
+                className="categories-text"
+                inline
+                type="checkbox"
+                label="Documents"
+              />
+              <Form.Check
+                className="categories-text"
+                inline
+                type="checkbox"
+                label="Electronics"
+              />
+              <Form.Check
+                className="categories-text"
+                inline
+                type="checkbox"
+                label="Toiletries"
+              />
+              <Form.Check
+                className="categories-text"
+                inline
+                type="checkbox"
+                label="COVID-19 Safety"
+              />
+              <Form.Text className="categories-text text-muted">
                 <br />
                 ...you can add more once you've made your list!
               </Form.Text>
             </Form.Group>
           </Row>
-          <Button variant="primary" type="submit">
-            Create your list!
+          <Button
+            className="create-button create-button-text"
+            variant="primary"
+            type="submit"
+          >
+            Create your list
           </Button>
         </Form>
       </Card>
