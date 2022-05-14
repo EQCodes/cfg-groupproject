@@ -25,7 +25,7 @@ const About = () => {
                 <p>We are Grace, Laura, Michelle & Eilidh.</p>
                 <p>
                   We are aspiring software developers and this website is our final
-                  project for the <a href="https://codefirstgirls.com/" className="a">Code First Girls</a> Degree!
+                  project for the <a href="https://codefirstgirls.com/" className="a" target="_blank">Code First Girls</a> Degree!
                 </p>
                 <p>
                   PackedIt makes trip planning easier by allowing users to make an
