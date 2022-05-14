@@ -5,6 +5,7 @@ import "../../../styles/styles.scss";
 import "../../../styles/Home.scss";
 import NavBar from "../../NavBar";
 import CreateYourList from "./CreateYourList";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
   return (
@@ -15,10 +16,10 @@ const Home = () => {
         </nav>
       </div>
       <div className="home-bg">
-        <div className="outer-card">
-          <h1 className="start-text">Let's get packing!</h1>
+        <h1 className="start-text">Let's get packing!</h1>
+        <Container style={{ paddingBottom: "380px" }}>
           <CreateYourList />
-        </div>
+        </Container>
       </div>
     </div>
   );

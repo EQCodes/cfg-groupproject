@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import NavBar from "../../NavBar";
 import AddItem from "./AddItem";
 import Item from "./ListBody/Item";
-import ListItems from "./ListBody/ListBody";
+import ListBody from "./ListBody/ListBody";
 import "../../../../src/styles/YourList.scss";
+import DisplayCategories from "./DisplayCategories/DisplayCategories";
+import ListInfo from "./ListInfo";
 
 const YourList = ({ categoryarray }) => {
   // Setting states
@@ -32,22 +34,36 @@ const YourList = ({ categoryarray }) => {
       <h2>Data Loading...</h2>
     </div>
   ) : (
-    <div>
-      <div>
-        <nav>
-          <NavBar />
-        </nav>
-      </div>
-      <div>
-        <AddItem
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          items={items}
-          setItems={setItems}
-          itemCategory={itemCategory}
-          setItemCategory={setItemCategory}
-        />
-        <ListItems items={items} setItems={setItems} />
+    <div className="home-bg">
+      <div className="container-fluid" style={{ paddingBottom: "7%" }}>
+        <div className="row">
+          <div className="col">
+            <nav>
+              <NavBar />
+            </nav>
+          </div>
+        </div>
+        <div className="row" style={{ paddingTop: "170px", paddingLeft: "2%" }}>
+          <div className="col-3 mx-5 your-list-card">
+            <DisplayCategories />
+          </div>
+          <div className="col ml-5" style={{ paddingRight: "7%" }}>
+            <div className="row your-list-info-card">
+              <ListInfo />
+            </div>
+            <div className="row mt-3 your-list-card">
+              <ListBody items={items} setItems={setItems} />
+              <AddItem
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                items={items}
+                setItems={setItems}
+                itemCategory={itemCategory}
+                setItemCategory={setItemCategory}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
