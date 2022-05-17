@@ -3,14 +3,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../../NavBar";
 import AddItem from "./AddItem";
-import Item from "./listBody/Item";
-import ListBody from "./listBody/ListBody";
+import Item from "./ListBody/Item";
+import ListBody from "./ListBody/ListBody";
 import "../../../../src/styles/YourList.scss";
-import DisplayCategories from "./displayCategories/DisplayCategories";
+import DisplayCategories from "./DisplayCategories/DisplayCategories";
 import ListInfo from "./ListInfo";
-import Input from "react-widgets/cjs/Input";
-import { db } from "../../../Firebase/firebase";
-
 
 const YourList = ({ categoryarray }) => {
   // Setting states
@@ -55,9 +52,7 @@ const YourList = ({ categoryarray }) => {
               <ListInfo />
             </div>
             <div className="row mt-3 your-list-card">
-            <AddItem />
-
-              {/* <ListBody items={items} setItems={setItems} />
+              <ListBody items={items} setItems={setItems} />
               <AddItem
                 inputValue={inputValue}
                 setInputValue={setInputValue}
@@ -65,7 +60,7 @@ const YourList = ({ categoryarray }) => {
                 setItems={setItems}
                 itemCategory={itemCategory}
                 setItemCategory={setItemCategory}
-              /> */}
+              />
             </div>
           </div>
         </div>
