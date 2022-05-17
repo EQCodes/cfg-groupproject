@@ -9,27 +9,31 @@ import {
   from "firebase/firestore";
 import { async } from "@firebase/util";
 import Item from "./listBody/Item";
+import CategoriesOption from "./listBody/CategoriesOption"
 
 function AddItem(props) {
-  const [items, setItems] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [input, setInput] = useState("");
   const userCollectionRef = collection(db, "items");
 
 
+  
+
   useEffect(() => {
-    const getItems = async()=>{
-    const q = query(collection(db, "items"));
+    const getCategories = async()=>{
+    const q = query(collection(db, "categories"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const theItems = [];
+      const theCategories = [];
       querySnapshot.forEach((doc) => {
-        theItems.push({ ...doc.data(), id: doc.id});
+        theCategories.push({ ...doc.data(), id: doc.id});
       });
-      setItems(theItems);
+      setCategories(theCategories);
     });
   };
 
-  getItems();
- }, []);
+  getCategories();
+  }, []);
+
 
 
   const addItem = async() => {
@@ -42,6 +46,9 @@ function AddItem(props) {
     <div>
       <Input value={input}
       onChange = {(event) => setInput(event.target.value)}></Input>
+
+      <CategoriesOption categories={categories}/>
+
       <Button
         disabled={!input}
         onClick={addItem}
@@ -51,9 +58,10 @@ function AddItem(props) {
         ADD Items
       </Button>
       <ul>
-        {items.map((item)=> (
+        {categories.map((category)=> (
           <>
-          <Item key={item.id} theItem = {item} />
+          {/* <Item key={item.id} theItem = {item} /> */}
+          <ItemsInCategory category={category}/>
           </>
         ))}
       </ul>
@@ -62,6 +70,17 @@ function AddItem(props) {
 }
 
 export default AddItem;
+
+function ItemsInCategory(props){
+
+  return (
+  <>
+    <h2>
+    {props.category.name}
+    </h2>
+    
+  </>);
+}
 
 // var categoriesDict = {
 //   category1: "clothes",
