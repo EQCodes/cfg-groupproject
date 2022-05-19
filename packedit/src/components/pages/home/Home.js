@@ -7,7 +7,6 @@ import NavBar from "../../NavBar";
 import CreateYourList from "./CreateYourList";
 import { Container } from "react-bootstrap";
 
-//Home Page
 const Home = () => {
   return (
     <div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-// NotFound Page
 const NotFound = () => {
   return (
     <div className="app">
