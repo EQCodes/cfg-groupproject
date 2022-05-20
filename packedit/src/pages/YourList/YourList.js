@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { db } from "../../firebase-config";
+import { db } from "../../Firebase/firebase-config";
 import { collection, getDocs, doc } from "firebase/firestore";
-import NavBar from "../../NavBar";
-import AddItem from "./AddItem";
-import Item from "./ListBody/Item";
-import ListBody from "./ListBody/ListBody";
-import DisplayCategories from "./DisplayCategories/DisplayCategories";
-import ListInfo from "./ListInfo";
-import "../../../../src/styles/YourList.scss";
+import NavBar from "../../components/NavBar";
+import ListBody from "../../components/ListBody";
+import DisplayCategories from "../../components/DisplayCategories";
+import "../../styles/YourList.scss";
 import { propTypes } from "react-bootstrap/esm/Image";
-import AddCategory from "./DisplayCategories/AddCategory";
-import CategoriesOption from "./CategoriesOption";
+import AddCategory from "../../components/AddCategory";
+import CategoriesOption from "../../components/CategoriesOption";
 
 function YourList() {
   // Setting states

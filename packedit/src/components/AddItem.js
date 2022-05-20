@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { db } from "../../firebase-config";
+import { db } from "../Firebase/firebase-config";
 import {
   collection, query, where, getDocs, doc, addDoc, arrayUnion, updateDoc, deleteDoc,
   onSnapshot, QuerySnapshot,
@@ -7,13 +7,12 @@ import {
   from "firebase/firestore";
 import Input from "react-widgets/cjs/Input";
 import Button from 'react-bootstrap/Button';
-import AddCategory from "./DisplayCategories/AddCategory";
+import AddCategory from "./AddCategory";
 
 
 function AddItem(props) {
   const [adding, setAdding] = useState(false);
   const [newItem, setNewItem] = useState("");
-  const myListCategoriesCollectionRef = collection(db, "myListCategories")
 
   const addingItem = () => {
     setAdding(!adding);

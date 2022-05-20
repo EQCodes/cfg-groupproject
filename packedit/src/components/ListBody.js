@@ -1,13 +1,10 @@
-import AddItem from "../AddItem";
-import Item from "./Item";
-
-
+import AddItem from "./AddItem";
 import React, { useState, useEffect } from "react";
-import { db } from "../../../firebase-config";
+import { db } from "../Firebase/firebase-config";
 import {
-  collection,query, where, getDocs, doc, addDoc,updateDoc,deleteDoc,
+  collection,query, where, getDocs, setDoc ,doc, addDoc,updateDoc,deleteDoc,
   onSnapshot, QuerySnapshot,} 
-  from "firebase/firestore";
+from "firebase/firestore";
 
 function ListBody(props) {
   const [myListCategories, setMyListCategories] = useState([])
@@ -32,44 +29,40 @@ function ListBody(props) {
   
   }, [props.theTrip]);
 
-  const deleteTheItem = (i, j) => {
+  const deleteTheItem = async (i, j, id) => {
     let temp_state = [...myListCategories];
 
     let temp_element = {...temp_state[i]};
 
     temp_element.CategoryItems.splice(j,1);
 
-    temp_state[i] = temp_element;
-
-    setMyListCategories(temp_state);
+    await setDoc(doc(db, "trips/"+props.theTrip+"/categories", id), temp_element);
+    
   };
 
-  const checkTheItem = (i, j) => {
+  const checkTheItem = async(i, j, id) => {
     let temp_state = [...myListCategories];
 
-    // 2. Make a shallow copy of the element you want to mutate
     let temp_element = { ...temp_state[i] };
     
-    // 3. Update the property you're interested in
     temp_element.CategoryItems[j].Completed = !temp_element.CategoryItems[j].Completed;
-    
-    // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
-    temp_state[i] = temp_element;
-    
-    // 5. Set the state to our new copy
-    setMyListCategories( temp_state );
+   
+    await setDoc(doc(db, "trips/"+props.theTrip+"/categories", id), temp_element);
   }
 
   return (
     <>
         {myListCategories.map((category, i) => {
           return <div key={i}>
-            <h4>{category.CategoryName}</h4>
+            <h4>{category.CategoryName} ID: {category.id}</h4>
             <AddItem category={category.id} theTrip={props.theTrip} />
             <>{category.CategoryItems.map((item, j) => {
               return <div key={j}>
-                {item.ItemName} ,{item.Completed == true ? <>completed</> : <>not completed</>} <button onClick={()=> checkTheItem(i,j)}>check</button> <button onClick={() => deleteTheItem(i, j)}>x</button>
-                {/* <Item item={item.id} itemName={item.ItemName} completed={item.Completed} /> */}
+                {item.ItemName} 
+                 {/* <button onClick={()=> checkTheItem(i,j, category.id)}>check</button>  */}
+                 <input type="checkbox" defaultChecked={item.Completed} onChange={() => checkTheItem(i,j,category.id)}/>
+                 <button onClick={() => deleteTheItem(i, j, category.id)}>x</button>
+                
               </div>
             })}</>
           </div>

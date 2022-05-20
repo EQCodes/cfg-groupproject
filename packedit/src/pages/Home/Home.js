@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../../../styles/styles.scss";
-import "../../../styles/Home.scss";
-import NavBar from "../../NavBar";
-import CreateYourList from "./CreateYourList";
+import "../../styles/styles.scss";
+import "../../styles/Home.scss";
+import NavBar from "../../components/NavBar";
+import CreateYourList from "../../components/CreateYourList";
 import { Container } from "react-bootstrap";
 
 const Home = () => {

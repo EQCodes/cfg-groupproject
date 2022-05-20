@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home/Home";
-import NotFound from "./components/pages/NotFound/NotFound";
-import YourList from "./components/pages/Your List/YourList";
-import Contact from "./components/pages/Contact";
-import About from "./components/pages/About";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import YourList from "./pages/YourList/YourList";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 // import bootstrap from "bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';

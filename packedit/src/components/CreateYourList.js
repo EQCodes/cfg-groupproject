@@ -4,9 +4,9 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import "../../../styles/CreateYourList.scss";
+import "../styles/CreateYourList.scss";
 import { useState, useEffect } from 'react';
-import { db } from '../../firebase-config';
+import { db } from '../Firebase/firebase-config';
 import { collection, writeBatch, getDocs, addDoc, setDoc, arrayUnion, updateDoc, doc, deleteDoc, Timestamp, firestore, DocumentReference } from 'firebase/firestore';
 import { dataValue } from "react-widgets/cjs/Accessors";
 

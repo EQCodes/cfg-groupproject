@@ -1,7 +1,7 @@
 import React from "react";
-import "../../styles/Home.scss";
+import "../styles/Home.scss";
 // import "../../styles/styles.scss";
-import NavBar from '../NavBar';
+import NavBar from '../components/NavBar';
 
 const About = () => {
   return (
