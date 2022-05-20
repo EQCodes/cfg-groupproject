@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home/Home";
-import NotFound from "./components/pages/NotFound/NotFound";
+import Home from "./components/pages/home/Home";
+import NotFound from "./components/pages/notFound/NotFound";
 import YourList from "./components/pages/Your List/YourList";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
