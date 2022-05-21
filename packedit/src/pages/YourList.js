@@ -104,12 +104,12 @@ function YourList() {
 
                     <Modal show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
-                        <Modal.Title>Delete List Warning</Modal.Title>
+                        <Modal.Title>Stop right there!</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>
-                        Stop right there! If you delete this list it deletes all 
+                        If you delete this list it deletes all 
                         of the categories and the items within them. 
-                        Are you sure you want to do that?
+                        Are you sure you want to do that?!
                       </Modal.Body>
                       <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
