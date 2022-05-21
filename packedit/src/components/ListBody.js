@@ -54,7 +54,7 @@ function ListBody(props) {
     <>
         {myListCategories.map((category, i) => {
           return <div key={i}>
-            <h4>{category.CategoryName} ID: {category.id}</h4>
+            <h4>{category.CategoryName}</h4>
             <AddItem category={category.id} theTrip={props.theTrip} />
             <>{category.CategoryItems.map((item, j) => {
               return <div key={j}>
