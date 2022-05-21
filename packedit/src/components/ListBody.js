@@ -53,15 +53,16 @@ function ListBody(props) {
   return (
     <>
         {myListCategories.map((category, i) => {
-          return <div key={i}>
+          return <div key={i} className="list-body">
             
-            <h4>{category.CategoryName} ID: {category.id}</h4>
+            <h4 className="category-header">{category.CategoryName}</h4>
             <AddItem category={category.id} theTrip={props.theTrip} />
             <>{category.CategoryItems.map((item, j) => {
-              return <div key={j}>
+              return <div key={j} className="item">
+                <input type="checkbox" defaultChecked={item.Completed} onChange={() => checkTheItem(i,j,category.id)}/>
                 {item.ItemName} 
                  {/* <button onClick={()=> checkTheItem(i,j, category.id)}>check</button>  */}
-                 <input type="checkbox" defaultChecked={item.Completed} onChange={() => checkTheItem(i,j,category.id)}/>
+                 
                  <button onClick={() => deleteTheItem(i, j, category.id)}>x</button>
                 
               </div>
