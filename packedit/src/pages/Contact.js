@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Home.scss";
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
@@ -20,6 +21,7 @@ const Contact = () => {
           <p>packeditteam@gmail.com</p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

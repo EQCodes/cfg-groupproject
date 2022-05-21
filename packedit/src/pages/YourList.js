@@ -6,6 +6,7 @@ import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
+import Footer from "../components/Footer";
 import Button from "react-bootstrap/Button";
 import "../styles/YourList.scss";
 
@@ -106,6 +107,7 @@ function YourList() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
