@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase-config";
-import { collection, getDocs, doc, deleteDoc, onSnapshot, query} from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc, onSnapshot, query } from "firebase/firestore";
 import NavBar from "../components/NavBar";
 import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
@@ -20,23 +20,23 @@ function YourList() {
   const [theTrip, setTheTrip] = useState("");
 
   const updateTheTrip = (theChosenTrip) => {
-      setTheTrip(theChosenTrip);
+    setTheTrip(theChosenTrip);
   };
 
-  const deleteDocument = async(TripID, CategoryID) => {
+  const deleteDocument = async (TripID, CategoryID) => {
 
-    await deleteDoc(doc(db, "trips/"+TripID+"/categories", CategoryID));
+    await deleteDoc(doc(db, "trips/" + TripID + "/categories", CategoryID));
   };
 
-  const deleteDocumentTrip = async(TripID) => {
+  const deleteDocumentTrip = async (TripID) => {
     await deleteDoc(doc(db, "trips", TripID));
   };
 
-  const DeleteTrip = async(id) =>{
-    const querySnapshot = await getDocs(collection(db, "trips/"+ id + "/categories"));
+  const DeleteTrip = async (id) => {
+    const querySnapshot = await getDocs(collection(db, "trips/" + id + "/categories"));
     querySnapshot.forEach((doc) => {
       deleteDocument(id, doc.id);
-  })
+    })
 
     deleteDocumentTrip(id);
     setTheTrip("");
@@ -49,14 +49,14 @@ function YourList() {
       const q = query(collection(db, "trips"));
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const theTrips = [];
-        querySnapshot.forEach((doc) =>{
-          theTrips.push({...doc.data(), id:doc.id});
+        querySnapshot.forEach((doc) => {
+          theTrips.push({ ...doc.data(), id: doc.id });
         });
 
         setMyList(theTrips);
         setIsLoading(false);
       });
-  };
+    };
 
     getMyList();
   }, []);
@@ -81,27 +81,27 @@ function YourList() {
         <div className="row" style={{ paddingTop: "170px", paddingLeft: "2%" }}>
           <div className="col-3 mx-5 your-list-card">
             <h3>Categories</h3>
-            <DisplayCategories theTrip={theTrip}/>
-            {theTrip == "" ? <></> : <AddCategory theTrip={theTrip}/>}
+            <DisplayCategories theTrip={theTrip} />
+            {theTrip === "" ? <></> : <AddCategory theTrip={theTrip} />}
           </div>
           <div className="col ml-5" style={{ paddingRight: "7%" }}>
             <div className="row your-list-info-card">
-              <TripSelector trips={myList} updateTheTrip={updateTheTrip}/>
-              {theTrip != "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
+              <TripSelector trips={myList} updateTheTrip={updateTheTrip} />
+              {theTrip !== "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
                 <>
 
-              <div>
-                <span className="your-list-info-card-trip">{trip.ListName}</span>
-                <span>{trip.Destination}</span>
-                <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
-                <Button onClick={()=>DeleteTrip(trip.id)}>Cancel</Button>
-              </div>
-              
-             
-              </>)) : <></>}
+                  <div>
+                    <span className="your-list-info-card-trip">{trip.ListName}</span>
+                    <span>{trip.Destination}</span>
+                    <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
+                    <Button onClick={() => DeleteTrip(trip.id)}>Cancel</Button>
+                  </div>
+
+
+                </>)) : <></>}
             </div>
             <div className="row mt-3">
-              <ListBody theTrip={theTrip}/>
+              <ListBody theTrip={theTrip} />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { db } from "../Firebase/firebase-config";
-import {doc, arrayUnion, updateDoc,} from "firebase/firestore";
+import { doc, arrayUnion, updateDoc, } from "firebase/firestore";
 import Button from 'react-bootstrap/Button';
 
 function AddItem(props) {
@@ -12,7 +12,7 @@ function AddItem(props) {
   }
 
   const addItem = async (category) => {
-    const categoryDoc = doc(db, "trips/"+props.theTrip+"/categories", category);
+    const categoryDoc = doc(db, "trips/" + props.theTrip + "/categories", category);
     const newFields = {
       CategoryItems: arrayUnion({
         ItemName: newItem,
@@ -33,7 +33,7 @@ function AddItem(props) {
         placeholder="Add Item"
         onChange={(e) => setNewItem(e.target.value)}
       />
-      <Button onClick={() => {addItem(props.category)}} disabled={newItem.length == 0}>Confirm</Button>
+      <Button onClick={() => { addItem(props.category) }} disabled={newItem.length === 0}>Confirm</Button>
       <Button onClick={addingItem}>Cancel</Button>
     </>
   ) : (

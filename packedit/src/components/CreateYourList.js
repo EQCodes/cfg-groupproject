@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import "../styles/CreateYourList.scss";
 import { db } from "../Firebase/firebase-config";
-import {collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 function CreateYourList() {
   // submit handler for when the user presses the submit button

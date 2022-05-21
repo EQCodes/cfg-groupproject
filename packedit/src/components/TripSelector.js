@@ -10,7 +10,7 @@ export default function TripSelector(props) {
   };
 
   return (
-    <Box sx={{ minWidth: 50}}>
+    <Box sx={{ minWidth: 50 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Trips</InputLabel>
         <Select
@@ -20,9 +20,9 @@ export default function TripSelector(props) {
           label="Categories"
           onChange={handleChange}
         >
-            {props.trips.map((trip)=>(
-                <MenuItem id={trip.id} value={trip.id}>{trip.ListName} To: {trip.Destination}</MenuItem>
-            ))}
+          {props.trips.map((trip) => (
+            <MenuItem id={trip.id} value={trip.id}>{trip.ListName} To: {trip.Destination}</MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>
