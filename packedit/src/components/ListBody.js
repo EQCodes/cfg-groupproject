@@ -58,7 +58,7 @@ function ListBody(props) {
             return <div key={j} className="item">
               <input type="checkbox" defaultChecked={item.Completed} onChange={() => checkTheItem(i, j, category.id)} />
               {item.ItemName}
-              <Button onClick={() => deleteTheItem(i, j, category.id)}>x</Button>
+              <Button className="delete-button" onClick={() => deleteTheItem(i, j, category.id)}>x</Button>
             </div>
           })}</>
         </div>

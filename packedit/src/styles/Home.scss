@@ -68,7 +68,7 @@
 
 .not-found-bg {
   background: url(../styles/Images/Photos/aron-visuals-3jBU9TbKW7o-unsplash.jpg);
- height: 80%;
+ height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,9 +79,19 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
-  font-size: 90px;
+  font-size: 70px;
   line-height: 150px;
   text-align: center;
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.delete-button {
+  border: none;
+  background: none;
+  padding: 10;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  color: #f37d5e;
 }
