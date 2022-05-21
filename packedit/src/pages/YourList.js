@@ -7,7 +7,6 @@ import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
 import Footer from "../components/Footer";
-import DeleteModal from "../components/DeleteModal";
 import {Button, Modal} from "react-bootstrap";
 import "../styles/YourList.scss";
 
