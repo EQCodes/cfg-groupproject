@@ -1,13 +1,28 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import "../styles/CreateYourList.scss";
-import { useState, useEffect } from 'react';
-import { db } from '../Firebase/firebase-config';
-import { collection, writeBatch, getDocs, addDoc, setDoc, arrayUnion, updateDoc, doc, deleteDoc, Timestamp, firestore, DocumentReference } from 'firebase/firestore';
+import { db } from "../Firebase/firebase-config";
+import {
+  collection,
+  writeBatch,
+  getDocs,
+  addDoc,
+  setDoc,
+  arrayUnion,
+  updateDoc,
+  doc,
+  deleteDoc,
+  Timestamp,
+  firestore,
+  DocumentReference,
+} from "firebase/firestore";
 import { dataValue } from "react-widgets/cjs/Accessors";
 
 function CreateYourList() {
@@ -21,6 +36,8 @@ function CreateYourList() {
   // const [myList, setMyList] = useState([]);
   // const myListCollectionRef = collection(db, "myList")
   // const myListCategoriesCollectionRef = collection(db, "myListCategories")
+  const navigate = useNavigate();
+
   const myListCollectionRef = collection(db, "trips");
   const myListCategoriesCollectionRef = collection(db, "categories");
 
@@ -38,41 +55,58 @@ function CreateYourList() {
   const handleCheck = async (category) => {
     setNewCategories({
       CategoryName: category,
-      CategoryItems: []
-    })
-  } 
+      CategoryItems: [],
+    });
+  };
   // at the moment this only adds one of the categories, need to figure out how to stop it overriding
 
   const createList = async () => {
+    //redirecting user to your list page
+    let path = `/your-list`;
+    navigate(path);
+
     const timestampConverted = new Date(newDate);
     await addDoc(myListCollectionRef, {
       ListName: newListName,
       Destination: newDestination,
       Date: timestampConverted,
-    }).then(DocumentReference => {
-      if(clothesCheck){
-        addDoc(collection(db, "trips/"+DocumentReference.id+"/categories"), {CategoryName: "Clothes", CategoryItems: []});
+    }).then((DocumentReference) => {
+      if (clothesCheck) {
+        addDoc(
+          collection(db, "trips/" + DocumentReference.id + "/categories"),
+          { CategoryName: "Clothes", CategoryItems: [] }
+        );
       }
-      if(documentCheck){
-        addDoc(collection(db, "trips/"+DocumentReference.id+"/categories"), {CategoryName: "Documents", CategoryItems: []});
+      if (documentCheck) {
+        addDoc(
+          collection(db, "trips/" + DocumentReference.id + "/categories"),
+          { CategoryName: "Documents", CategoryItems: [] }
+        );
       }
-      if(electronicCheck){
-        addDoc(collection(db, "trips/"+DocumentReference.id+"/categories"), {CategoryName: "Eletronics", CategoryItems: []});
+      if (electronicCheck) {
+        addDoc(
+          collection(db, "trips/" + DocumentReference.id + "/categories"),
+          { CategoryName: "Eletronics", CategoryItems: [] }
+        );
       }
-      if(toiletriesCheck){
-        addDoc(collection(db, "trips/"+DocumentReference.id+"/categories"), {CategoryName: "Toiletries", CategoryItems: []});
+      if (toiletriesCheck) {
+        addDoc(
+          collection(db, "trips/" + DocumentReference.id + "/categories"),
+          { CategoryName: "Toiletries", CategoryItems: [] }
+        );
       }
-      if(covidCheck){
-        addDoc(collection(db, "trips/"+DocumentReference.id+"/categories"), {CategoryName: "COVID-19 Safety", CategoryItems: []});
+      if (covidCheck) {
+        addDoc(
+          collection(db, "trips/" + DocumentReference.id + "/categories"),
+          { CategoryName: "COVID-19 Safety", CategoryItems: [] }
+        );
       }
-        
     });
     //Old code
     // await addDoc(myListCategoriesCollectionRef,
     //   newCategories
-    //   ); 
-    
-  }
+    //   );
+  };
 
   return (
     <div>
@@ -87,7 +121,9 @@ function CreateYourList() {
                   className="input"
                   type="text"
                   placeholder="Summer Holiday"
-                  onChange={(event) => { setNewListName(event.target.value); }}
+                  onChange={(event) => {
+                    setNewListName(event.target.value);
+                  }}
                 />
               </Form.Group>
             </Col>
@@ -98,7 +134,9 @@ function CreateYourList() {
                   className="input"
                   type="text"
                   placeholder="Maldives"
-                  onChange={(event) => { setNewDestination(event.target.value); }}
+                  onChange={(event) => {
+                    setNewDestination(event.target.value);
+                  }}
                 />
               </Form.Group>
             </Col>
@@ -110,7 +148,9 @@ function CreateYourList() {
                   type="date"
                   name="trip-date"
                   placeholder="Trip Date"
-                  onChange={(event) => { setNewDate(event.target.value); }}
+                  onChange={(event) => {
+                    setNewDate(event.target.value);
+                  }}
                 />
               </Form.Group>
             </Col>
@@ -128,7 +168,7 @@ function CreateYourList() {
                 label="Clothes"
                 id="string" // accessibility
                 // onChange={() => {handleCheck("Clothes")}}
-                onChange={()=>setClothesCheck(!clothesCheck)}
+                onChange={() => setClothesCheck(!clothesCheck)}
               />
               <Form.Check
                 className="categories-text"
@@ -137,7 +177,7 @@ function CreateYourList() {
                 label="Documents"
                 id="string" //accessibility
                 // onChange={() => { handleCheck("Documents") }}
-                onChange={()=>setDocumentCheck(!documentCheck)}
+                onChange={() => setDocumentCheck(!documentCheck)}
               />
               <Form.Check
                 className="categories-text"
@@ -146,7 +186,7 @@ function CreateYourList() {
                 label="Electronics"
                 id="string" // accessibility
                 // onChange={() => { handleCheck("Electronics") }}
-                onChange={()=>setelectronicCheck(!electronicCheck)}
+                onChange={() => setelectronicCheck(!electronicCheck)}
               />
               <Form.Check
                 className="categories-text"
@@ -154,8 +194,8 @@ function CreateYourList() {
                 type="checkbox"
                 label="Toiletries"
                 id="string" // accessibility
-                // onChange={() => { handleCheck("Toiletries") }}          
-                onChange={()=>setToiletriesCheck(!toiletriesCheck)}    
+                // onChange={() => { handleCheck("Toiletries") }}
+                onChange={() => setToiletriesCheck(!toiletriesCheck)}
               />
               <Form.Check
                 className="categories-text"
@@ -164,7 +204,7 @@ function CreateYourList() {
                 label="COVID-19 Safety"
                 id="string" // accessibility
                 // onChange={() => { handleCheck("COVID-19 Safety") }}
-                onChange={()=>setCovidCheck(!covidCheck)}
+                onChange={() => setCovidCheck(!covidCheck)}
               />
               <Form.Text className="categories-text text-muted">
                 <br />
