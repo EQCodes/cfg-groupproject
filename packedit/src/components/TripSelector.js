@@ -1,19 +1,13 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { useState } from 'react';
+import { Box, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 
 export default function TripSelector(props) {
-  const [option, setOption] = React.useState('');
+  const [option, setOption] = useState('');
 
   const handleChange = (event) => {
     setOption(event.target.value);
     props.updateTheTrip(event.target.value);
   };
-
-
 
   return (
     <Box sx={{ minWidth: 50}}>

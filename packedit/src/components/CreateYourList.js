@@ -1,29 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
+import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import "../styles/CreateYourList.scss";
 import { db } from "../Firebase/firebase-config";
-import {
-  collection,
-  writeBatch,
-  getDocs,
-  addDoc,
-  setDoc,
-  arrayUnion,
-  updateDoc,
-  doc,
-  deleteDoc,
-  Timestamp,
-  firestore,
-  DocumentReference,
-} from "firebase/firestore";
-import { dataValue } from "react-widgets/cjs/Accessors";
+import {collection, addDoc } from "firebase/firestore";
 
 function CreateYourList() {
   // submit handler for when the user presses the submit button
@@ -34,26 +14,15 @@ function CreateYourList() {
   }
 
   const navigate = useNavigate();
-
   const myListCollectionRef = collection(db, "trips");
-
   const [newListName, setNewListName] = useState("");
   const [newDestination, setNewDestination] = useState("");
   const [newDate, setNewDate] = useState("");
-  const [newCategories, setNewCategories] = useState("");
-
   const [clothesCheck, setClothesCheck] = useState(false);
   const [documentCheck, setDocumentCheck] = useState(false);
   const [electronicCheck, setelectronicCheck] = useState(false);
   const [toiletriesCheck, setToiletriesCheck] = useState(false);
   const [covidCheck, setCovidCheck] = useState(false);
-
-  const handleCheck = async (category) => {
-    setNewCategories({
-      CategoryName: category,
-      CategoryItems: [],
-    });
-  };
 
   const createList = async () => {
     //redirecting user to your list page

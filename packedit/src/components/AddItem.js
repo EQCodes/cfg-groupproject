@@ -1,14 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { db } from "../Firebase/firebase-config";
-import {
-  collection, query, where, getDocs, doc, addDoc, arrayUnion, updateDoc, deleteDoc,
-  onSnapshot, QuerySnapshot,
-}
-  from "firebase/firestore";
-import Input from "react-widgets/cjs/Input";
+import {doc, arrayUnion, updateDoc,} from "firebase/firestore";
 import Button from 'react-bootstrap/Button';
-import AddCategory from "./AddCategory";
-
 
 function AddItem(props) {
   const [adding, setAdding] = useState(false);

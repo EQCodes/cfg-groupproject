@@ -1,14 +1,11 @@
 import AddItem from "./AddItem";
 import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase-config";
-import {
-  collection,query, where, getDocs, setDoc ,doc, addDoc,updateDoc,deleteDoc,
-  onSnapshot, QuerySnapshot,} 
-from "firebase/firestore";
+import { collection,query, setDoc ,doc, onSnapshot } from "firebase/firestore";
+import Button from 'react-bootstrap/Button';
 
 function ListBody(props) {
   const [myListCategories, setMyListCategories] = useState([])
-  const myListCategoriesCollectionRef = collection(db, "myListCategories");
   
   useEffect(() => {
     const getMyListCategories = async () => {
@@ -61,7 +58,7 @@ function ListBody(props) {
               return <div key={j} className="item">
                 <input type="checkbox" defaultChecked={item.Completed} onChange={() => checkTheItem(i,j,category.id)}/>
                 {item.ItemName}                  
-                 <button onClick={() => deleteTheItem(i, j, category.id)}>x</button>
+                 <Button onClick={() => deleteTheItem(i, j, category.id)}>x</Button>
               </div>
             })}</>
           </div>

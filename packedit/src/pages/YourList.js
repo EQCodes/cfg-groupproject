@@ -1,16 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase-config";
-import { collection, getDocs, doc, deleteDoc, onSnapshot, QuerySnapshot, writeBatch ,query} from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc, onSnapshot, query} from "firebase/firestore";
 import NavBar from "../components/NavBar";
 import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
-import "../styles/YourList.scss";
-import { propTypes } from "react-bootstrap/esm/Image";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
 import Button from "react-bootstrap/Button";
+import "../styles/YourList.scss";
 
 
 function YourList() {

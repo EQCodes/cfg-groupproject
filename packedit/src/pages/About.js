@@ -1,11 +1,11 @@
 import React from "react";
-import "../styles/Home.scss";
-import NavBar from '../components/NavBar';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 import dog1 from "../styles/Images/Photos/dog1.jpg";
 import dog2 from "../styles/Images/Photos/dog2.jpg";
 import dog3 from "../styles/Images/Photos/dog3.jpg";
 import dog4 from "../styles/Images/Photos/dog4.jpg";
+import NavBar from '../components/NavBar';
+import "../styles/Home.scss";
 
 
 const About = () => {

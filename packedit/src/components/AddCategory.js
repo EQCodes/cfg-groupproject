@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { db } from "../Firebase/firebase-config";
-import {
-  collection,query, where, getDocs, doc, addDoc,updateDoc,deleteDoc,
-  onSnapshot, QuerySnapshot,} 
-  from "firebase/firestore";
+import {collection, addDoc} from "firebase/firestore";
 import Button from 'react-bootstrap/Button';
-import { async } from "@firebase/util";
 
 function AddCategory(props) {
     const [adding, setAdding] = useState(false);
