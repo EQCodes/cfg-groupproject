@@ -8,7 +8,7 @@ import logoPath from "../styles/Images/Logos/full-logo.png";
 function NavBar() {
   return (
     <div className="position-absolute top-0">
-      <Navbar className="py-4 px-3" bg="light" expand="lg" fixed="top">
+      <Navbar className="py-4 px-3" data-testid="NavBar" bg="light" expand="lg" fixed="top">
         <div>
           <Container>
             <Navbar.Brand href="/">
