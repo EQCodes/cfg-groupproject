@@ -151,11 +151,11 @@ function YourList() {
               })} */}
               {theTrip != "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
                 <>
-              <h3>List Info</h3>
+
               <div>
-                <p>List Name: {trip.ListName}</p>
-                <p>Destination: {trip.Destination}</p>
-                <p>Date: {trip.Date.toDate().toDateString()}</p>
+                <span className="your-list-info-card-trip">{trip.ListName}</span>
+                <span>{trip.Destination}</span>
+                <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
                 {/* <p>trip id is {trip.id}</p> */}
                 <Button onClick={()=>DeleteTrip(trip.id)}>Cancel</Button>
               </div>
@@ -164,7 +164,6 @@ function YourList() {
               </>)) : <></>}
             </div>
             <div className="row mt-3">
-              <h3>List Body</h3>
               <ListBody theTrip={theTrip}/>
               {/* {myList.map((list, i) => {
                 return <div key={i}>

@@ -1,10 +1,18 @@
 import React from "react";
+import NavBar from '../../components/NavBar';
 import { useState, useEffect } from "react";
 
 const NotFound = () => {
   return (
-    <div className="app">
-      <h1>Page not found!</h1>
+    <div>
+      <nav>
+        <NavBar />
+      </nav>
+      <div className="not-found-bg" >
+        <div className="not-found-text">
+          <h1>Sorry you look lost, this page can't be found!</h1>
+        </div>
+      </div>
     </div>
   );
 };
