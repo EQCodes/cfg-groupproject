@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../Firebase/firebase-config";
-import { collection, getDocs, doc } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc, onSnapshot, QuerySnapshot, writeBatch ,query} from "firebase/firestore";
 import NavBar from "../../components/NavBar";
 import ListBody from "../../components/ListBody";
 import DisplayCategories from "../../components/DisplayCategories";
@@ -10,6 +10,8 @@ import "../../styles/YourList.scss";
 import { propTypes } from "react-bootstrap/esm/Image";
 import AddCategory from "../../components/AddCategory";
 import CategoriesOption from "../../components/CategoriesOption";
+import Button from "react-bootstrap/Button";
+
 
 function YourList() {
   // Setting states
@@ -26,17 +28,76 @@ function YourList() {
       setTheTrip(theChosenTrip);
   };
 
+  const deleteDocument = async(TripID, CategoryID) => {
+    // console.log("Trip: ", TripID, "Category", CategoryID);
+
+    // (db, Colletions, Document)
+    await deleteDoc(doc(db, "trips/"+TripID+"/categories", CategoryID));
+  };
+
+  const deleteDocumentTrip = async(TripID) => {
+    // console.log("Trip: ", TripID, "Category", CategoryID);
+    await deleteDoc(doc(db, "trips", TripID));
+  };
+
+  const DeleteTrip = async(id) =>{
+    const querySnapshot = await getDocs(collection(db, "trips/"+ id + "/categories"));
+    querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+      // console.log(doc.id, " => ", doc.data());
+          // await deleteDoc(doc(db, "trips/"+props.theTrip+"/categories", id));
+      // console.log("id: ", id, "docID" ,doc.id)
+      deleteDocument(id, doc.id);
+  })
+
+    deleteDocumentTrip(id);
+    setTheTrip("");
+  };
+
+
+  // function DisplayCategories(props) {
+  //   const [myListCategories, setMyListCategories] = useState([])
   
+  //   useEffect(() => {
+  //     const getMyListCategories = async () => {
+  //       const q = query(collection(db,  "trips/"+props.theTrip+"/categories"));
+  //       const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  //         const theCategories = [];
+  //         querySnapshot.forEach((doc) =>{
+  //           theCategories.push({...doc.data(), id:doc.id});
+  //         });
+  
+  //         setMyListCategories(theCategories);
+  //       });
+  //   };
+  //   if(props.theTrip !== ""){
+  //     getMyListCategories();
+  //   }
+  // }, [props.theTrip]);
   
   // useEffect to show data immediately when someone opens the page
   // it's a function that is called every time the page renders
   useEffect(() => {
+    
+    // const getMyListOld = async () => {
+    //   const data = await getDocs(myListCollectionRef);
+    //   setMyList(data.docs.map((doc) => ({...doc.data(), id: doc.id}))); // at the moment this displays all documents in the collection, we want only one
+    //   //after receiving data, set isLoading to false
+    //   setIsLoading(false);
+    // };
+
     const getMyList = async () => {
-      const data = await getDocs(myListCollectionRef);
-      setMyList(data.docs.map((doc) => ({...doc.data(), id: doc.id}))); // at the moment this displays all documents in the collection, we want only one
-      //after receiving data, set isLoading to false
-      setIsLoading(false);
-    };
+      const q = query(collection(db, "trips"));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const theTrips = [];
+        querySnapshot.forEach((doc) =>{
+          theTrips.push({...doc.data(), id:doc.id});
+        });
+
+        setMyList(theTrips);
+        setIsLoading(false);
+      });
+  };
 
     getMyList();
   }, []);
@@ -95,7 +156,11 @@ function YourList() {
                 <p>List Name: {trip.ListName}</p>
                 <p>Destination: {trip.Destination}</p>
                 <p>Date: {trip.Date.toDate().toDateString()}</p>
+                {/* <p>trip id is {trip.id}</p> */}
+                <Button onClick={()=>DeleteTrip(trip.id)}>Cancel</Button>
               </div>
+              
+             
               </>)) : <></>}
             </div>
             <div className="row mt-3">
