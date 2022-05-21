@@ -20,7 +20,7 @@ function CreateYourList() {
   const [newDate, setNewDate] = useState("");
   const [clothesCheck, setClothesCheck] = useState(false);
   const [documentCheck, setDocumentCheck] = useState(false);
-  const [electronicCheck, setelectronicCheck] = useState(false);
+  const [electronicsCheck, setElectronicsCheck] = useState(false);
   const [toiletriesCheck, setToiletriesCheck] = useState(false);
   const [covidCheck, setCovidCheck] = useState(false);
 
@@ -47,10 +47,10 @@ function CreateYourList() {
           { CategoryName: "Documents", CategoryItems: [] }
         );
       }
-      if (electronicCheck) {
+      if (electronicsCheck) {
         addDoc(
           collection(db, "trips/" + DocumentReference.id + "/categories"),
-          { CategoryName: "Eletronics", CategoryItems: [] }
+          { CategoryName: "Electronics", CategoryItems: [] }
         );
       }
       if (toiletriesCheck) {
@@ -142,7 +142,7 @@ function CreateYourList() {
                 type="checkbox"
                 label="Electronics"
                 id="string" // accessibility
-                onChange={() => setelectronicCheck(!electronicCheck)}
+                onChange={() => setElectronicsCheck(!electronicsCheck)}
               />
               <Form.Check
                 className="categories-text"
