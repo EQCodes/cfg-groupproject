@@ -31,7 +31,7 @@ function DisplayCategories(props) {
     <>
       {myListCategories.map((category, i) => {
         return <div key={i}>
-          <>{category.CategoryName}</> <Button onClick={() => deleteTheCategory(category.id)}>x</Button>
+          <>{category.CategoryName}</> <Button className="delete-button" onClick={() => deleteTheCategory(category.id)}>x</Button>
         </div>
       })}
     </>
