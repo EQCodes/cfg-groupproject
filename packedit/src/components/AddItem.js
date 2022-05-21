@@ -19,7 +19,6 @@ function AddItem(props) {
   }
 
   const addItem = async (category) => {
-    // const q = query(myListCategoriesCollectionRef, where("CategoryName", "==", category))
     const categoryDoc = doc(db, "trips/"+props.theTrip+"/categories", category);
     const newFields = {
       CategoryItems: arrayUnion({

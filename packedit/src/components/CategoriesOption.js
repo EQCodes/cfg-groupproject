@@ -29,13 +29,8 @@ export default function CategoriesOption(props) {
             {props.trips.map((trip)=>(
                 <MenuItem id={trip.id} value={trip.id}>{trip.ListName} To: {trip.Destination}</MenuItem>
             ))}
-          {/* <MenuItem value={"Dest1"}>Destination1</MenuItem>
-          <MenuItem value={"Dest2"}>Destination2</MenuItem>
-          <MenuItem value={"Dest3"}>Destination3</MenuItem> */}
         </Select>
       </FormControl>
-
-      {/* <div>{option}</div> */}
     </Box>
   );
 }
