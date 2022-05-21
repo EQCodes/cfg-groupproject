@@ -7,7 +7,8 @@ import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
 import Footer from "../components/Footer";
-import Button from "react-bootstrap/Button";
+import DeleteModal from "../components/DeleteModal";
+import {Button, Modal} from "react-bootstrap";
 import "../styles/YourList.scss";
 
 
@@ -17,8 +18,11 @@ function YourList() {
   const [myList, setMyList] = useState([]);
   //getting data from firebase
   const [isLoading, setIsLoading] = useState(true);
-
   const [theTrip, setTheTrip] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const updateTheTrip = (theChosenTrip) => {
     setTheTrip(theChosenTrip);
@@ -95,7 +99,28 @@ function YourList() {
                     <span className="your-list-info-card-trip">{trip.ListName}</span>
                     <span>{trip.Destination}</span>
                     <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
-                    <Button onClick={() => DeleteTrip(trip.id)}>Delete this trip</Button>
+                    {/* <Button onClick={() => DeleteTrip(trip.id)}>Delete this trip</Button> */}
+                    <Button onClick={handleShow}>Delete this trip</Button>
+
+                    <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Delete List Warning</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        Stop right there! If you delete this list it deletes all 
+                        of the categories and the items within them. 
+                        Are you sure you want to do that?
+                      </Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                          Close - I regret my decision!
+                        </Button>
+                        <Button variant="primary" onClick={() => DeleteTrip(trip.id)}>
+                          Delete - I'm feeling brave!
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
+
                   </div>
 
 
