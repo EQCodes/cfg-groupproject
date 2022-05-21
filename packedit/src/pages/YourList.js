@@ -9,7 +9,7 @@ import DisplayCategories from "../components/DisplayCategories";
 import "../styles/YourList.scss";
 import { propTypes } from "react-bootstrap/esm/Image";
 import AddCategory from "../components/AddCategory";
-import CategoriesOption from "../components/CategoriesOption";
+import TripSelector from "../components/TripSelector";
 import Button from "react-bootstrap/Button";
 
 
@@ -89,7 +89,7 @@ function YourList() {
           </div>
           <div className="col ml-5" style={{ paddingRight: "7%" }}>
             <div className="row your-list-info-card">
-              <CategoriesOption trips={myList} updateTheTrip={updateTheTrip}/>
+              <TripSelector trips={myList} updateTheTrip={updateTheTrip}/>
               {theTrip != "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
                 <>
 

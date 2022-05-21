@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function CategoriesOption(props) {
+export default function TripSelector(props) {
   const [option, setOption] = React.useState('');
 
   const handleChange = (event) => {

@@ -10,7 +10,6 @@ import { async } from "@firebase/util";
 function AddCategory(props) {
     const [adding, setAdding] = useState(false);
     const [input, setInput] = useState("");
-    const myListCategoriesCollectionRef = collection(db, "myListCategories");
   
     const addingCategory = () => {
       setAdding(!adding);
