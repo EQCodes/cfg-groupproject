@@ -21,7 +21,7 @@ export default function TripSelector(props) {
           onChange={handleChange}
         >
           {props.trips.map((trip) => (
-            <MenuItem id={trip.id} value={trip.id}>{trip.ListName} To: {trip.Destination}</MenuItem>
+            <MenuItem id={trip.id} value={trip.id}>{trip.ListName} to: {trip.Destination}</MenuItem>
           ))}
         </Select>
       </FormControl>
