@@ -52,7 +52,6 @@ File structure - took screenshot but may need to update for final report.
 
 
 
-
 <h2> 2. Background </h2>
 
 <p>PackedIt has been designed to help frequent travellers plan what they need to remember for their trips with ease and simplicity. No more forgetting your passport, suncream or headphones and having to make a last minute trip home or fork out to buy something new while on holiday - time and money is precious when you are travelling!<p>
@@ -161,6 +160,14 @@ Features we implemented:
   <img src="../ProjectReport/images/AppArchitecture.png" />
 </p>
 
+<h3> 3.5 File Structure <h3>
+
+We split out every component into it's own component.js file and these were all saved within the components folder.  We also had seperate js file for each page.  Style sheets were also split out where appropriate.  See screenshot below for our file structure:
+
+<p align="center">
+  <img src="../ProjectReport/images/FileStructure.png" />
+</p>
+
 
 ADD IN FLOW OF APP?
 
@@ -176,10 +183,10 @@ ADD IN FLOW OF APP?
   <img src="../ProjectReport/images/SWOT.png" />
 </p>
 
-<p>Team member roles changed over the course of the project based on availability and other commitments.  The team worked together to review key documents and make final decisions based on individual work (for example colours, font etc.)
+<p>Team member roles changed over the course of the project based on availability and other commitments.  The team worked together to review key documents and make final decisions based on individual work (for example design decisions).
 </p>
 
-<p>To ensure collaboration and consistency we used a shared GitHub repository to store our code.  This allowed different team members to work on different branches at the same time and then at the appropriate time merging these into the main branch.  Branches were only merged after our branch was complete and the full team agreed to merge it into the main branch.</p>
+<p>To ensure collaboration and consistency we used a shared GitHub repository to store our code.  This allowed different team members to work on different branches at the same time and then at the appropriate time merging these into the main branch.  Branches were only merged after a branch was working and the full team agreed to merge it into the main branch.  This ensured our main ranch was always the latest most up to date working version.</p>
 
 
 <h3> 4.2 Implementation process (achievements, challenges, decision to change something)</h3>
@@ -189,7 +196,8 @@ ADD IN FLOW OF APP?
 <p> However, this has not come without challenges, a few challenges we faced were:
 <ul>
 <li> Initially intended on having a one page scroll navigation but due to the complexity, we choose to focus our efforts on having a fully functioning packing list.
-<li> Figuring out the correct data structure of our items and categories.  Originally they were held seperatelt however on further investigation we decided to combine them into the one object.  However accessing these categories and items was then a challenge in itself.
+<li> Figuring out the correct data structure of our items and categories.  Originally they were held seperately however on further investigation we decided to combine them into the one object.  However accessing these categories and items was then a challenge in itself.
+<li> One particular issue we have faced (and so far have been unable to solve) is being able to edit the item, this is very nested and we have not been able to edit the item.
 <li> We experienced issues with Firebase quota limits, this was due to our app 'spamming' firebase.
 </ul>
 </p>
@@ -211,6 +219,7 @@ ADD IN FLOW OF APP?
 <p>We also had a Slack workspace where we kept in daily contact via various dedicated channels for project planning.  In this Slack channel, we had bookedmarks to links to other shared workspaces and accounts e.g. Google Drive, Trello & GitHub.</p>
 
 <p>We frequently refactored code to find better ways of structuring our code for readability and sustainability, trying not to shy away from change when it was necessary to improve the project.</p>
+
 
 
     -  **did we do code reviews?**
