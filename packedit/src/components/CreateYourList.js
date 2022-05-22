@@ -6,9 +6,8 @@ import { db } from "../Firebase/firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 
 function CreateYourList() {
-
   function submitHandler(e) {
-    // submit handler for when the user presses the submit button to prevent the page 
+    // submit handler for when the user presses the submit button to prevent the page
     // from reloading/refreshing - this is bad because it resets the state, if we have any
     e.preventDefault();
   }
@@ -32,7 +31,8 @@ function CreateYourList() {
       ListName: newListName,
       Destination: newDestination,
       Date: timestampConverted,
-    }).then((DocumentReference) => { // the following lines check if the radio button categories have been selected & add to db
+    }).then((DocumentReference) => {
+      // the following lines check if the radio button categories have been selected & add to db
       if (clothesCheck) {
         addDoc(
           collection(db, "trips/" + DocumentReference.id + "/categories"),
@@ -63,10 +63,9 @@ function CreateYourList() {
           { CategoryName: "COVID-19 Safety", CategoryItems: [] }
         );
       }
-      navigate('/your-list', { state: { tripID: DocumentReference.id } }); // this takes the user to the Your List page on form submission
+      navigate("/your-list", { state: { tripID: DocumentReference.id } }); // this takes the user to the Your List page on form submission
     });
   };
-
 
   return (
     <div>
@@ -85,10 +84,8 @@ function CreateYourList() {
                   }}
                 />
               </Form.Group>
-
             </Col>
             <Col>
-
               <Form.Group className="title-text">
                 <Form.Label className="mb-3">Destination</Form.Label>
                 <Form.Control
@@ -100,10 +97,8 @@ function CreateYourList() {
                   }}
                 />
               </Form.Group>
-
             </Col>
             <Col>
-
               <Form.Group className="title-text" controlId="dob">
                 <Form.Label className="mb-3">Select Date</Form.Label>
                 <Form.Control
@@ -173,14 +168,13 @@ function CreateYourList() {
           </Row>
 
           <Button
-            className="create-button create-button-text"
+            className="create-button"
             variant="primary"
             type="submit"
             onClick={createList}
           >
             Create your list
           </Button>
-
         </Form>
       </Card>
     </div>

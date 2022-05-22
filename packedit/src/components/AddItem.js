@@ -55,7 +55,9 @@ function AddItem(props) {
       </Button>
     </>
   ) : (
-    <Button onClick={addingItem}>Add Item</Button>
+    <Button className="button" onClick={addingItem}>
+      Add Item
+    </Button>
   );
 }
 

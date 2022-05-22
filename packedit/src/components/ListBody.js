@@ -88,7 +88,6 @@ function ListBody(props) {
                     >
                       x
                     </Button>
-
                   </div>
                 );
               })}
@@ -97,7 +96,6 @@ function ListBody(props) {
             <div style={{ margin: "15px 0px 6px 10px" }}>
               <AddItem category={category.id} theTrip={props.theTrip} />
             </div>
-
           </div>
         );
       })}
