@@ -142,7 +142,7 @@ function CreateYourList() {
                 inline
                 type="checkbox"
                 label="Electronics"
-                id="accessibility" // accessibility
+                id="electronics" // accessibility
                 onChange={() => setElectronicsCheck(!electronicsCheck)}
               />
               <Form.Check
