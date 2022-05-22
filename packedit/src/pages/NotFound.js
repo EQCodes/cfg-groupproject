@@ -14,7 +14,7 @@ const NotFound = () => {
           <p>You seem to be lost!</p>
           <p>
             {" "}
-            <a href="/"> Head home..</a>{" "}
+            <a className="a" href="/"> Head home..</a>{" "}
           </p>
         </div>
       </div>

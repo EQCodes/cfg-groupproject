@@ -18,7 +18,14 @@ const Contact = () => {
             If you have any questions about the project or would just like to
             have a chat, feel free to send us a message at:
           </p>
-          <p><a href="mailto:packeditteam@gmail.com">packeditteam@gmail.com</a></p>
+          <p><a href="mailto:packeditteam@gmail.com"
+            className="a"
+            target="_blank"
+            rel="noreferrer"
+          >
+            packeditteam@gmail.com
+          </a>
+          </p>
         </div>
       </div>
       <Footer />
