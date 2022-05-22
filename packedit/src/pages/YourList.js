@@ -14,8 +14,10 @@ import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
-import { Form, Row, Col, Card, Button } from "react-bootstrap";
+import Footer from "../components/Footer";
+import {Button, Modal} from "react-bootstrap";
 import "../styles/YourList.scss";
+import {useLocation} from 'react-router-dom';
 
 function YourList() {
   // Setting states
@@ -53,6 +55,8 @@ function YourList() {
     setTheTrip("");
   };
 
+  const location = useLocation();
+
   // useEffect to show data immediately when someone opens the page
   // it's a function that is called every time the page renders
   useEffect(() => {
@@ -71,6 +75,15 @@ function YourList() {
 
     getMyList();
   }, []);
+
+  useEffect(()=> {
+    if(location.state){
+      setTheTrip(location.state.tripID);
+    }
+    else{
+      setTheTrip("");
+    }
+  }, [location])
 
   //Ternary operator to display data appropriately
   //If isLoading === true, page is still loading
@@ -97,36 +110,40 @@ function YourList() {
           </div>
           <div className="col ml-5" style={{ paddingRight: "7%" }}>
             <div className="row your-list-info-card">
-              <TripSelector trips={myList} updateTheTrip={updateTheTrip} />
-              {theTrip !== "" ? (
-                myList
-                  .filter((theList) => theList.id.includes(theTrip))
-                  .map((trip) => (
-                    <>
-                      <div class="container" style={{ paddingTop: "10px" }}>
-                        <div class="row your-list-info">
-                          <div class="col-4 your-list-info-trip">
-                            {trip.ListName}
-                          </div>
-                          <div class="col-3">{trip.Destination}</div>
-                          <div class="col-5 your-list-info-date d-flex">
-                            {" "}
-                            {trip.Date.toDate().toDateString()}
-                          </div>
-                        </div>
-                        <br />
-                        <Button
-                          onClick={() => DeleteTrip(trip.id)}
-                          className="delete-trip-button"
-                        >
-                          Delete this trip
+              <TripSelector trips={myList} updateTheTrip={updateTheTrip} theDefault={theTrip}/>
+              {theTrip !== "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
+                <>
+
+                  <div>
+                    <span className="your-list-info-card-trip">{trip.ListName}</span>
+                    <span>{trip.Destination}</span>
+                    <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
+                    {/* <Button onClick={() => DeleteTrip(trip.id)}>Delete this trip</Button> */}
+                    <Button onClick={handleShow}>Delete this trip</Button>
+
+                    <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Stop right there!</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        If you delete this list it deletes all 
+                        of the categories and the items within them. 
+                        Are you sure you want to do that?!
+                      </Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                          Close - I regret my decision!
                         </Button>
-                      </div>
-                    </>
-                  ))
-              ) : (
-                <></>
-              )}
+                        <Button variant="primary" onClick={() => DeleteTrip(trip.id)}>
+                          Delete - I'm feeling brave!
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
+
+                  </div>
+
+
+                </>)) : <></>}
             </div>
             <div className="row mt-3">
               <ListBody theTrip={theTrip} />

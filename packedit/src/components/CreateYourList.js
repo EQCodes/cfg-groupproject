@@ -27,7 +27,6 @@ function CreateYourList() {
   const createList = async () => {
     //redirecting user to your list page
     let path = `/your-list`;
-    navigate(path);
 
     const timestampConverted = new Date(newDate);
     await addDoc(myListCollectionRef, {
@@ -65,8 +64,10 @@ function CreateYourList() {
           { CategoryName: "COVID-19 Safety", CategoryItems: [] }
         );
       }
+        navigate('/your-list',{state:{tripID: DocumentReference.id}});
     });
   };
+
 
   return (
     <div>
@@ -125,7 +126,7 @@ function CreateYourList() {
                 inline
                 type="checkbox"
                 label="Clothes"
-                id="string" // accessibility
+                id="clothes" // accessibility
                 onChange={() => setClothesCheck(!clothesCheck)}
               />
               <Form.Check
@@ -133,7 +134,7 @@ function CreateYourList() {
                 inline
                 type="checkbox"
                 label="Documents"
-                id="string" //accessibility
+                id="documents" //accessibility
                 onChange={() => setDocumentCheck(!documentCheck)}
               />
               <Form.Check
@@ -141,7 +142,7 @@ function CreateYourList() {
                 inline
                 type="checkbox"
                 label="Electronics"
-                id="string" // accessibility
+                id="electronics" // accessibility
                 onChange={() => setElectronicsCheck(!electronicsCheck)}
               />
               <Form.Check
@@ -149,7 +150,7 @@ function CreateYourList() {
                 inline
                 type="checkbox"
                 label="Toiletries"
-                id="string" // accessibility
+                id="toiletries" // accessibility
                 onChange={() => setToiletriesCheck(!toiletriesCheck)}
               />
               <Form.Check
@@ -157,7 +158,7 @@ function CreateYourList() {
                 inline
                 type="checkbox"
                 label="COVID-19 Safety"
-                id="string" // accessibility
+                id="covid" // accessibility
                 onChange={() => setCovidCheck(!covidCheck)}
               />
               <Form.Text className="categories-text text-muted">
