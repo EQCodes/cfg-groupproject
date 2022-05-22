@@ -113,12 +113,22 @@ function YourList() {
               {theTrip !== "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
                 <>
 
-                  <div>
-                    <span className="your-list-info-card-trip">{trip.ListName}</span>
+                  <div class="container" style={{ paddingTop: "10px" }}>
+                    <div class="row your-list-info">
+                      <div class="col-4 your-list-info-trip">
+                            {trip.ListName}
+                          </div>
+                          <div class="col-3">{trip.Destination}</div>
+                          <div class="col-5 your-list-info-date d-flex">
+                            {" "}
+                            {trip.Date.toDate().toDateString()}
+                          </div>
+                        </div>
+                        <br />
+                    {/* <span className="your-list-info-card-trip">{trip.ListName}</span>
                     <span>{trip.Destination}</span>
-                    <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
-                    {/* <Button onClick={() => DeleteTrip(trip.id)}>Delete this trip</Button> */}
-                    <Button onClick={handleShow}>Delete this trip</Button>
+                    <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span> */}
+                    <Button onClick={handleShow} className="delete-trip-button" >Delete this trip</Button>
 
                     <Modal show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
