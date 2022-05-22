@@ -22,8 +22,7 @@ export default function TripSelector(props) {
         >
           {props.trips.map((trip) => (
             <MenuItem id={trip.id} value={trip.id}>
-              <b>{trip.ListName}</b> &nbsp; {trip.Destination} &nbsp;
-              {trip.Date.toDate().toDateString()}
+              {trip.ListName} to {trip.Destination} &nbsp;
             </MenuItem>
           ))}
         </Select>
