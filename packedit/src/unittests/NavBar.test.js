@@ -1,9 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import NavBar from '../../src/components/NavBar';
+import NavBar from '../components/NavBar';
+import {render} from "@testing-library/react";
 
+describe("NavBar Component", () => {
 
-it("NavBar renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<NavBar></NavBar>, div)
-})
+    it("Navbar renders without crashing", () => {
+        const {getByTestId} = render(<NavBar></NavBar>);
+        const nav = getByTestId("NavBar")
+        expect(nav).toBeTruthy();
+    });
+
+});
