@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase-config";
-import { collection, getDocs, doc, deleteDoc, onSnapshot, query } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  deleteDoc,
+  onSnapshot,
+  query,
+} from "firebase/firestore";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
@@ -10,7 +18,6 @@ import Footer from "../components/Footer";
 import {Button, Modal} from "react-bootstrap";
 import "../styles/YourList.scss";
 import {useLocation} from 'react-router-dom';
-
 
 function YourList() {
   // Setting states
@@ -29,7 +36,6 @@ function YourList() {
   };
 
   const deleteDocument = async (TripID, CategoryID) => {
-
     await deleteDoc(doc(db, "trips/" + TripID + "/categories", CategoryID));
   };
 
@@ -38,10 +44,12 @@ function YourList() {
   };
 
   const DeleteTrip = async (id) => {
-    const querySnapshot = await getDocs(collection(db, "trips/" + id + "/categories"));
+    const querySnapshot = await getDocs(
+      collection(db, "trips/" + id + "/categories")
+    );
     querySnapshot.forEach((doc) => {
       deleteDocument(id, doc.id);
-    })
+    });
 
     deleteDocumentTrip(id);
     setTheTrip("");
@@ -96,7 +104,7 @@ function YourList() {
         </div>
         <div className="row" style={{ paddingTop: "170px", paddingLeft: "2%" }}>
           <div className="col-3 mx-5 your-list-card">
-            <h3>Categories</h3>
+            <h3 className="category-bar-header">List Categories</h3>
             <DisplayCategories theTrip={theTrip} />
             {theTrip === "" ? <></> : <AddCategory theTrip={theTrip} />}
           </div>
@@ -146,6 +154,6 @@ function YourList() {
       <Footer />
     </div>
   );
-};
+}
 
 export default YourList;

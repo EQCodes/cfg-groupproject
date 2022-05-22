@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { db } from "../Firebase/firebase-config";
 import { collection, addDoc } from "firebase/firestore";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
+import "../styles/styles.scss";
 
 function AddCategory(props) {
   const [adding, setAdding] = useState(false);
@@ -9,32 +10,50 @@ function AddCategory(props) {
 
   const addingCategory = () => {
     setAdding(!adding);
-  }
+  };
 
   const createCategoryDoc = async () => {
     await addDoc(collection(db, "trips/" + props.theTrip + "/categories"), {
       CategoryName: input,
-      CategoryItems: []
+      CategoryItems: [],
     });
 
     setInput("");
     setAdding(false);
-  }
+  };
 
   return adding ? (
     <>
       <input
+        className="input-box"
+        style={{ marginLeft: "10%", marginTop: "11px" }}
         type="text"
         value={input}
-        placeholder="Add Category"
+        placeholder="  Add Category"
         onChange={(e) => setInput(e.target.value)}
       />
-      <Button onClick={createCategoryDoc} disabled={input.length === 0}>Confirm</Button>
-      <Button onClick={addingCategory}>Cancel</Button>
+      <br />
+      <Button
+        className="button"
+        onClick={createCategoryDoc}
+        disabled={input.length === 0}
+        style={{ marginLeft: "10%", marginTop: "10px" }}
+      >
+        Confirm
+      </Button>
+      <Button
+        className="button"
+        onClick={addingCategory}
+        style={{ marginTop: "10px" }}
+      >
+        Cancel
+      </Button>
     </>
   ) : (
-    <Button onClick={addingCategory}>Add Category</Button>
-  )
+    <Button className="category-bar-add-button" onClick={addingCategory}>
+      + Add Category...
+    </Button>
+  );
 }
 
 export default AddCategory;
