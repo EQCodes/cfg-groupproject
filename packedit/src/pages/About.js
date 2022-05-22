@@ -6,7 +6,7 @@ import dog3 from "../styles/Images/Photos/dog3.jpg";
 import dog4 from "../styles/Images/Photos/dog4.jpg";
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import "../styles/Home.scss";
+import "../styles/About.scss";
 
 
 const About = () => {
