@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase-config";
-import { collection, query, doc, deleteDoc, onSnapshot } from "firebase/firestore";
-import Button from 'react-bootstrap/Button';
+import {
+  collection,
+  query,
+  doc,
+  deleteDoc,
+  onSnapshot,
+} from "firebase/firestore";
+import Button from "react-bootstrap/Button";
 
 function DisplayCategories(props) {
-  const [myListCategories, setMyListCategories] = useState([])
+  const [myListCategories, setMyListCategories] = useState([]);
 
   useEffect(() => {
     const getMyListCategories = async () => {
@@ -30,9 +36,17 @@ function DisplayCategories(props) {
   return (
     <>
       {myListCategories.map((category, i) => {
-        return <div key={i}>
-          <>{category.CategoryName}</> <Button className="delete-button" onClick={() => deleteTheCategory(category.id)}>x</Button>
-        </div>
+        return (
+          <div key={i} className="category-bar-items">
+            <>{category.CategoryName}</>{" "}
+            <Button
+              className="delete-button-bar"
+              onClick={() => deleteTheCategory(category.id)}
+            >
+              x
+            </Button>
+          </div>
+        );
       })}
     </>
   );

@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase-config";
-import { collection, getDocs, doc, deleteDoc, onSnapshot, query } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  deleteDoc,
+  onSnapshot,
+  query,
+} from "firebase/firestore";
 import NavBar from "../components/NavBar";
 import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
+import { Form, Row, Col, Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "../styles/YourList.scss";
-
 
 function YourList() {
   // Setting states
@@ -24,7 +31,6 @@ function YourList() {
   };
 
   const deleteDocument = async (TripID, CategoryID) => {
-
     await deleteDoc(doc(db, "trips/" + TripID + "/categories", CategoryID));
   };
 
@@ -33,10 +39,12 @@ function YourList() {
   };
 
   const DeleteTrip = async (id) => {
-    const querySnapshot = await getDocs(collection(db, "trips/" + id + "/categories"));
+    const querySnapshot = await getDocs(
+      collection(db, "trips/" + id + "/categories")
+    );
     querySnapshot.forEach((doc) => {
       deleteDocument(id, doc.id);
-    })
+    });
 
     deleteDocumentTrip(id);
     setTheTrip("");
@@ -80,25 +88,42 @@ function YourList() {
         </div>
         <div className="row" style={{ paddingTop: "170px", paddingLeft: "2%" }}>
           <div className="col-3 mx-5 your-list-card">
-            <h3>Categories</h3>
+            <h3 className="category-bar-header">List Categories</h3>
             <DisplayCategories theTrip={theTrip} />
             {theTrip === "" ? <></> : <AddCategory theTrip={theTrip} />}
           </div>
           <div className="col ml-5" style={{ paddingRight: "7%" }}>
             <div className="row your-list-info-card">
               <TripSelector trips={myList} updateTheTrip={updateTheTrip} />
-              {theTrip !== "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
-                <>
-
-                  <div>
-                    <span className="your-list-info-card-trip">{trip.ListName}</span>
-                    <span>{trip.Destination}</span>
-                    <span className="your-list-info-card-date">{trip.Date.toDate().toDateString()}</span>
-                    <Button onClick={() => DeleteTrip(trip.id)}>Delete this trip</Button>
-                  </div>
-
-
-                </>)) : <></>}
+              {theTrip !== "" ? (
+                myList
+                  .filter((theList) => theList.id.includes(theTrip))
+                  .map((trip) => (
+                    <>
+                      <div class="container" style={{ paddingTop: "10px" }}>
+                        <div class="row your-list-info">
+                          <div class="col-4 your-list-info-trip">
+                            {trip.ListName}
+                          </div>
+                          <div class="col-3">{trip.Destination}</div>
+                          <div class="col-5 your-list-info-date d-flex">
+                            {" "}
+                            {trip.Date.toDate().toDateString()}
+                          </div>
+                        </div>
+                        <br />
+                        <Button
+                          onClick={() => DeleteTrip(trip.id)}
+                          className="delete-trip-button"
+                        >
+                          Delete this trip
+                        </Button>
+                      </div>
+                    </>
+                  ))
+              ) : (
+                <></>
+              )}
             </div>
             <div className="row mt-3">
               <ListBody theTrip={theTrip} />
@@ -108,6 +133,6 @@ function YourList() {
       </div>
     </div>
   );
-};
+}
 
 export default YourList;

@@ -7,3 +7,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.button {
+  margin: 4px;
+}
+
+.input-box {
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  margin-left: 3px;
+  color: #919191;
+}
