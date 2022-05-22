@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/styles.scss";
 import "../styles/Home.scss";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import CreateYourList from "../components/CreateYourList";
 import { Container } from "react-bootstrap";
 
@@ -19,6 +20,7 @@ const Home = () => {
           <CreateYourList />
         </Container>
       </div>
+      <Footer />
     </div>
   );
 };

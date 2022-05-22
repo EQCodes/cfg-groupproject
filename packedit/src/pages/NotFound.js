@@ -1,5 +1,7 @@
 import React from "react";
-import NavBar from '../components/NavBar';
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import "../styles/Home.scss";
 
 const NotFound = () => {
   return (
@@ -9,17 +11,17 @@ const NotFound = () => {
       </nav>
       <div className="not-found-bg">
         <div className="not-found-text">
-            <p>
-              Sorry you look lost, 
-            </p>
-            <p>
-            this page can't be found!
-            </p>
-            <p> <a href="/"> Head home..</a> </p>
+          <p>You seem to be lost!</p>
+          <p>
+            {" "}
+            <a href="/"> Head home..</a>{" "}
+          </p>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
-  };
+};
 
 export default NotFound;

@@ -9,12 +9,12 @@ import {
   query,
 } from "firebase/firestore";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
-import { Form, Row, Col, Card } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import { Form, Row, Col, Card, Button } from "react-bootstrap";
 import "../styles/YourList.scss";
 
 function YourList() {
@@ -23,8 +23,11 @@ function YourList() {
   const [myList, setMyList] = useState([]);
   //getting data from firebase
   const [isLoading, setIsLoading] = useState(true);
-
   const [theTrip, setTheTrip] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const updateTheTrip = (theChosenTrip) => {
     setTheTrip(theChosenTrip);
@@ -131,6 +134,7 @@ function YourList() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
