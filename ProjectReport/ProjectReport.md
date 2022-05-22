@@ -53,7 +53,7 @@ In addition to these aims and objectives for the usability of PackedIt, we had t
 
 <p>PackedIt allows users to:
 <ul>
-<li> create and view multiple lists for different trips, each store in a database
+<li> create and view multiple lists for different trips, each stored in a database
 <li> enter a list name, a destination and a date of travel for each list which is then displayed on the 'Your List' page
 <li> select which list they would like to view within the 'Your List' page via a drop down
 <li> select pre-defined categories to start and add as many personalised categories as they wish within each list
@@ -81,7 +81,7 @@ We have created a simple four page web application with branding that is centred
 
 <h2> 3.2 Requirements </h2>
 
-<p>When designing our web application we agreed on a set of features which would make up our Minimum Viable Product (MVP).  We also included a number of extensions that we would have like to implement if time allowed.  However, our MVP meets all the aims of the project.
+<p>When designing our web application we agreed on a set of features which would make up our Minimum Viable Product (MVP).  We also included a number of extensions that we would have liked to implement if time allowed.  However, our MVP meets all the aims of the project.
 
 Features that we were successful in implementing:
 <ul>
@@ -90,7 +90,7 @@ Features that we were successful in implementing:
 <li> A contact us page.
 <li> User can 
 <ul>
-<li> create multiple lists (exceeded MVP to create just one just)
+<li> create multiple lists (exceeded MVP to create just one list).
 <li> add a list name (not mandatory).
 <li> add a list destination (not mandatory).
 <li> add a trip date (not mandatory).
@@ -106,22 +106,22 @@ Features that we were successful in implementing:
 
 Additionally, we included a couple of things that were not in our MVP but add value to our app, including:
 <ul>
-<li> alt text on images and ids on form input for accessibility
+<li> alt text on images and ids on form input for accessibility.
 <li> a 'Page not found' page which is displayed if the user tries to visit a page that does not exist. 
-<li> a modal alert box that warns a user when they are about to delete their entire list
+<li> a modal alert box that warns a user when they are about to delete their entire list.
 </ul>
 
 <p>Further features and extensions that we would have liked to have implemented:</p>
 <ul>
-<li> Creating a log in system for users that connects to Firebase Firestore
-<li> Editing the names of individual list items, categories & list details after creation
+<li> Creating a log in system for users that connects to Firebase Firestore.
+<li> Editing the names of individual list items, categories & list details after creation.
 <li> Sort items based on whether they have been completed or not.
 <li> Connect to a weather API for the trip destination to display the current weather forecast.
 <li> Option for user to create a ‘favourites’ or ‘basics’ list that can be copied over for each trip so they always have their essentials.
 <li> Suggest items to pack based on weather e.g. umbrella if raining, suncream if over certain temperature, jacket if below a certain temperature.
 <li> Holiday destination or type of holiday to impact the images on the web page. 
 <li> Drag & drop or move around list items on the page.
-<li> Optimisation of the app for mobile devices
+<li> Optimisation of the app for mobile devices.
 </ul>
 
 
@@ -211,7 +211,7 @@ We split out every component into it's own component.js file and these were all 
 </ul>
  </p> 
 <p>We also kept in touch throughout the project development on Slack via various dedicated channels. This allowed the full team to keep up to date with the progress of the project and work around whatever other commitments we had.  This space had links to all of our other key shared workspaces and accounts e.g. Google Drive, Trello, GitHub & Figma.</p>
-<p> To support the delivery of the project we also had a Trello board. We used this as the basis of our sprint review and sprint planning meetings.  Items were place in order of priority so it was clear which parts we should work on first.  Each member was able to take on tasks and place them in the appropriate column (for example, backlog, doing, blocked or testing).  This also allowed team members to assign themsleves tasks based on skill and availability.<p>
+<p> To support the delivery of the project we also had a Trello board. We used this as the basis of our sprint review and sprint planning meetings.  Items were placed in order of priority so it was clear which parts we should work on first.  Each member was able to take on tasks and place them in the appropriate column (for example, backlog, doing, blocked or testing).  This also allowed team members to assign themsleves tasks based on skill and availability.<p>
 
 <p align="center">
   <img src="../ProjectReport/images/Trello.png" />
@@ -232,8 +232,8 @@ We split out every component into it's own component.js file and these were all 
 <p>We struggled with the implemenation of unit testing due to the connection with Firebase making this quite complex and this being an entirely new area for each team member. However, we have included some simple unit tests in our project and we manually tested significantly throughout and at the end of our project.</p>
 
 <p>We did some user acceptance testing with a couple of selected family and friends who we let use the desktop application as we observed and gathered their questions and feedback at the end. This process was reassuring in that users liked the design and simplicity of the site, and we were encouraged to hear our ideas for extensions and further developments echoed in their feedback.
-
 </p>
+
 <h2> 5.3 System limitations </h2>
 As noted at the moment in our ReadMe file, the app uses one Firebase database as it doesn't have the user account or login feature yet. This would be first priority in any future development to ensure user privacy and safe storage of their data. </p>
 
@@ -244,8 +244,8 @@ As noted at the moment in our ReadMe file, the app uses one Firebase database as
 However, for the purposes of this project, we are pleased with the result.</p>
 
 
-<h2> 6. Conclusion </h2>
-<p>Ultimately, in spite of the hurdles and the learning curve for all, we managed to come together as a team, virtually, to create a complete, user friendly and functioning web application that could be beneficial for travellers and organisation fiends alike!</p>
+<h1> 6. Conclusion </h1>
+<p>Ultimately, in spite of the hurdles and the learning curve for all, we managed to come together as a team, virtually, to create a complete, user friendly and functioning web application that could be beneficial for travellers and organisation friends alike!</p>
 
 <p>As individual team members, we all developed our software development skills in new and existing areas, all the while experiencing a real life Software Development Life Cycle for the first time.</p>
 
