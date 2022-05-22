@@ -6,13 +6,14 @@ import { db } from "../Firebase/firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 
 function CreateYourList() {
-  // submit handler for when the user presses the submit button
+
   function submitHandler(e) {
-    //to prevent the page from reloading/refreshing
-    //this is bad because it resets the state, if we have any
+    // submit handler for when the user presses the submit button to prevent the page 
+    // from reloading/refreshing - this is bad because it resets the state, if we have any
     e.preventDefault();
   }
 
+  // setting the state of the many different form elements
   const navigate = useNavigate();
   const myListCollectionRef = collection(db, "trips");
   const [newListName, setNewListName] = useState("");
@@ -24,13 +25,14 @@ function CreateYourList() {
   const [toiletriesCheck, setToiletriesCheck] = useState(false);
   const [covidCheck, setCovidCheck] = useState(false);
 
+  // when the 'create your list' button is pressed, this function adds all of the form responses for this list to the database
   const createList = async () => {
     const timestampConverted = new Date(newDate);
     await addDoc(myListCollectionRef, {
       ListName: newListName,
       Destination: newDestination,
       Date: timestampConverted,
-    }).then((DocumentReference) => {
+    }).then((DocumentReference) => { // the following lines check if the radio button categories have been selected & add to db
       if (clothesCheck) {
         addDoc(
           collection(db, "trips/" + DocumentReference.id + "/categories"),
@@ -61,7 +63,7 @@ function CreateYourList() {
           { CategoryName: "COVID-19 Safety", CategoryItems: [] }
         );
       }
-        navigate('/your-list',{state:{tripID: DocumentReference.id}});
+      navigate('/your-list', { state: { tripID: DocumentReference.id } }); // this takes the user to the Your List page on form submission
     });
   };
 
@@ -83,8 +85,10 @@ function CreateYourList() {
                   }}
                 />
               </Form.Group>
+
             </Col>
             <Col>
+
               <Form.Group className="title-text">
                 <Form.Label className="mb-3">Destination</Form.Label>
                 <Form.Control
@@ -96,8 +100,10 @@ function CreateYourList() {
                   }}
                 />
               </Form.Group>
+
             </Col>
             <Col>
+
               <Form.Group className="title-text" controlId="dob">
                 <Form.Label className="mb-3">Select Date</Form.Label>
                 <Form.Control
@@ -112,6 +118,7 @@ function CreateYourList() {
               </Form.Group>
             </Col>
           </Row>
+
           <Row>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Label className="title-text my-3">
@@ -164,6 +171,7 @@ function CreateYourList() {
               </Form.Text>
             </Form.Group>
           </Row>
+
           <Button
             className="create-button create-button-text"
             variant="primary"
@@ -172,6 +180,7 @@ function CreateYourList() {
           >
             Create your list
           </Button>
+
         </Form>
       </Card>
     </div>

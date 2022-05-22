@@ -9,6 +9,7 @@ function AddCategory(props) {
   const [input, setInput] = useState("");
 
   const addingCategory = () => {
+    // This manages the opening and closing of the category input box
     setAdding(!adding);
   };
 

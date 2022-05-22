@@ -18,6 +18,7 @@ const About = () => {
             <NavBar />
           </nav>
           <div className="row" style={{ paddingTop: "170px", paddingLeft: "2%" }}>
+
             <Col sm={6}>
               <div className="about-head-text">
                 <h2>Hi!</h2>
@@ -35,25 +36,27 @@ const About = () => {
                 <p>No more forgetting any essentials! So, have you PackedIt yet?</p>
               </div>
             </Col>
+
             <Col sm={5}>
               <Row>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog1} alt="image of a small dog with a green background"/>
+                  <Image width="95%" roundedCircle src={dog1} alt="image of a small dog with a green background" />
                 </Col>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog2} alt="image of a small dog with an orange background"/>
+                  <Image width="95%" roundedCircle src={dog2} alt="image of a small dog with an orange background" />
                 </Col>
               </Row>
               <br />
               <Row>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog3} alt="image of a small dog with a pink background"/>
+                  <Image width="95%" roundedCircle src={dog3} alt="image of a small dog with a pink background" />
                 </Col>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog4} alt="image of a small dog with a yellow background"/>
+                  <Image width="95%" roundedCircle src={dog4} alt="image of a small dog with a yellow background" />
                 </Col>
               </Row>
             </Col>
+
           </div>
         </div>
       </div>

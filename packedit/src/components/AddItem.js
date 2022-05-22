@@ -9,6 +9,7 @@ function AddItem(props) {
   const [newItem, setNewItem] = useState("");
 
   const addingItem = () => {
+    // This manages the opening and closing of the item input box
     setAdding(!adding);
   };
 
