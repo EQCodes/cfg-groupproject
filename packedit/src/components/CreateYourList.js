@@ -25,9 +25,6 @@ function CreateYourList() {
   const [covidCheck, setCovidCheck] = useState(false);
 
   const createList = async () => {
-    //redirecting user to your list page
-    let path = `/your-list`;
-
     const timestampConverted = new Date(newDate);
     await addDoc(myListCollectionRef, {
       ListName: newListName,

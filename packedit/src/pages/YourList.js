@@ -14,7 +14,6 @@ import ListBody from "../components/ListBody";
 import DisplayCategories from "../components/DisplayCategories";
 import AddCategory from "../components/AddCategory";
 import TripSelector from "../components/TripSelector";
-import Footer from "../components/Footer";
 import {Button, Modal} from "react-bootstrap";
 import "../styles/YourList.scss";
 import {useLocation} from 'react-router-dom';

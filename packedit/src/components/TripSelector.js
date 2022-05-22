@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 
 export default function TripSelector(props) {
-  const [option, setOption] = useState("");
+  const [option, setOption] = useState({});
 
   const handleChange = (event) => {
     setOption(event.target.value);
