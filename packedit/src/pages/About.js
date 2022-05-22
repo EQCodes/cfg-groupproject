@@ -38,19 +38,19 @@ const About = () => {
             <Col sm={5}>
               <Row>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog1} />
+                  <Image width="95%" roundedCircle src={dog1} alt="image of a small dog with a green background"/>
                 </Col>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog2} />
+                  <Image width="95%" roundedCircle src={dog2} alt="image of a small dog with an orange background"/>
                 </Col>
               </Row>
               <br />
               <Row>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog3} />
+                  <Image width="95%" roundedCircle src={dog3} alt="image of a small dog with a pink background"/>
                 </Col>
                 <Col>
-                  <Image width="95%" roundedCircle src={dog4} />
+                  <Image width="95%" roundedCircle src={dog4} alt="image of a small dog with a yellow background"/>
                 </Col>
               </Row>
             </Col>
