@@ -9,6 +9,7 @@ import TripSelector from "../components/TripSelector";
 import Footer from "../components/Footer";
 import {Button, Modal} from "react-bootstrap";
 import "../styles/YourList.scss";
+import {useLocation} from 'react-router-dom';
 
 
 function YourList() {
@@ -46,6 +47,8 @@ function YourList() {
     setTheTrip("");
   };
 
+  const location = useLocation();
+
   // useEffect to show data immediately when someone opens the page
   // it's a function that is called every time the page renders
   useEffect(() => {
@@ -64,6 +67,15 @@ function YourList() {
 
     getMyList();
   }, []);
+
+  useEffect(()=> {
+    if(location.state){
+      setTheTrip(location.state.tripID);
+    }
+    else{
+      setTheTrip("");
+    }
+  }, [location])
 
   //Ternary operator to display data appropriately
   //If isLoading === true, page is still loading
@@ -90,7 +102,7 @@ function YourList() {
           </div>
           <div className="col ml-5" style={{ paddingRight: "7%" }}>
             <div className="row your-list-info-card">
-              <TripSelector trips={myList} updateTheTrip={updateTheTrip} />
+              <TripSelector trips={myList} updateTheTrip={updateTheTrip} theDefault={theTrip}/>
               {theTrip !== "" ? myList.filter(theList => theList.id.includes(theTrip)).map((trip) => (
                 <>
 

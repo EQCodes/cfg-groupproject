@@ -16,7 +16,7 @@ export default function TripSelector(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={option}
+          value={props.theDefault}
           label="Categories"
           onChange={handleChange}
         >
