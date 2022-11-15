@@ -5,6 +5,9 @@
 ### **PackedIt Overview**
 PackedIt is a React web application for travellers, like you, to create and store lists of the things you need to remember to pack for your trips.  It is designed to help you plan what you need to remember for your trips with ease and simplicity.  You can create multiple lists for your upcoming trip by adding items to individual categories. You can view your items in each category and tick them off once you've packed them.  If you make an error you can also delete any of your items, categories, or even the full list. 
 
+![HomePage](./ProjectReport/images/ScreenshotHomepage.png)
+![YourListPage](./ProjectReport/images/ScreenshotYourListPage.png)
+
 ### **Who created it:**
 This web application was created by Eilidh Quinn, Gracialine Ong, Laura Almond and BoGyeong Kim as part of our final project for our CodeFirstGirls Full Stack Degree (Spring 2022).  
 
